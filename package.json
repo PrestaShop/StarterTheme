@@ -1,0 +1,32 @@
+{
+  "name": "prestashop-starter-theme",
+  "version": "1.0.0",
+  "description": "A Starter Theme to help you develop a PrestaShop theme from scratch in no time.",
+  "main": "src/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/gulp default",
+    "watch": "node_modules/.bin/gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrestaShop/StarterTheme.git"
+  },
+  "author": "We Are Legion <pub@prestashop.com>",
+  "license": "OSL",
+  "bugs": {
+    "url": "https://github.com/PrestaShop/StarterTheme/issues"
+  },
+  "homepage": "https://github.com/PrestaShop/StarterTheme#readme",
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.1.0",
+    "gulp": "^3.9.0",
+    "gulp-exit": "0.0.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "git+ssh://git@github.com:djfm/gulp-stylus.git",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.4.0"
+  }
+}

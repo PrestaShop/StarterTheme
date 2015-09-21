@@ -28,6 +28,9 @@
     </footer>
 
     <!-- Load JS files here -->
+    {block name="scripts"}
+        <script src="{$urls.theme_assets}/js/theme.js"></script>
+    {/block}
 
   </body>
 
