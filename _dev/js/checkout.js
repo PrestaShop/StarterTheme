@@ -82,6 +82,12 @@ function setupCheckoutScripts () {
   $('body').on('change', 'input[name="payment-option"]', enableOrDisableOrderButton);
   $('body').on('change', 'input[type="checkbox"][data-action="hideOrShow"]', hideOrShow);
   $('body').on('change', '.js-address-selector input', selectAddress);
+  $('body').on('click', '.delivery-option input[type=radio]', function (event) {
+        prestashop.emit('cart updated', {
+          reason: event.target.dataset
+        });
+      }
+  );
   $('body').on('click', '.checkout-step.-reachable h1', function (event) {
     $('.-js-current, .-current').removeClass('-js-current -current');
     $(event.target).closest('.checkout-step').toggleClass('-js-current');
@@ -90,10 +96,8 @@ function setupCheckoutScripts () {
   collapsePaymentOptions();
 
   prestashop.on('cart updated', function () {
-    $.get('', {
-      action: 'getCartSummary'
-    }).then(resp => {
-      $('#cart-summary').html(resp);
+    $.post(location.href, null, null, 'json').then(function (resp) {
+      $('#checkout-cart-summary').replaceWith(resp.preview);
     });
   });
 }
