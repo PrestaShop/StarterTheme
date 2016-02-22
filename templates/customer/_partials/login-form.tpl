@@ -1,30 +1,30 @@
-<section class="login-form">
-  <form action="{$urls.pages.authentication}" method="post">
-    <header>
-      <h1 class="h3">{l s='Already registered?'}</h1>
-    </header>
+{include file='_partials/form-errors.tpl' errors=$errors['']}
 
-    <section class="form-fields">
+{* TODO StarterTheme: HOOKS!!! *}
 
-      <label>
-        <span>{l s='Email address'}</span>
-        <input type="email" name="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" />
-      </label>
+<form action="{$action}" method="post">
 
-      <label>
-        <span>{l s='Password'}</span>
-        <input type="password" data-validate="isPasswd" name="passwd" value="" />
-      </label>
-      <p class="lost_password"><a href="{$urls.pages.password}" rel="nofollow">{l s='Forgot your password?'}</a></p>
+  <section class="form-fields">
+    {block name='form_fields'}
+      {foreach from=$formFields item="field"}
+        {block name='form_field'}
+          {form_field field=$field}
+        {/block}
+      {/foreach}
+    {/block}
 
-    </section>
+    <p class="lost_password">
+      <a href="{$urls.pages.password}" rel="nofollow">
+        {l s='Forgot your password?'}
+      </a>
+    </p>
+  </section>
 
-    <footer class="form-footer">
-      <input type="hidden" class="hidden" name="back" value="{$back}" />
-      <button type="submit" id="SubmitLogin" name="SubmitLogin">
-        {l s='Sign in'}
-      </button>
-    </footer>
+  <footer class="form-footer">
+    <input type="hidden" name="submitLogin" value="1">
+    {block name='form_buttons'}
+      <button type="submit">{l s='Sign in'}</button>
+    {/block}
+  </footer>
 
-  </form>
-</section>
+</form>

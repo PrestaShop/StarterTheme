@@ -1,10 +1,10 @@
-{extends "page.tpl"}
+{extends file='page.tpl'}
 
-{block name="page_title"}
-  {l s="Our stores"}
+{block name='page_title'}
+  {l s='Our stores'}
 {/block}
 
-{block name="page_content_container"}
+{block name='page_content_container'}
   <section id="content" class="page-content page-stores">
 
     {foreach $stores as $store}
@@ -18,7 +18,7 @@
             <img src="" alt="">
           </div>
           <ul>
-            <li>{$store.address.formatted}</li>
+            <li>{$store.address.formatted nofilter}</li>
             {if $store.phone}
               <li>{l s='Phone:'} {$store.phone}</li>
             {/if}

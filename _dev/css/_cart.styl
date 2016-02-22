@@ -1,6 +1,9 @@
 .cart-preview
   float right
   position relative
+  a, a:hover, a:visited
+    text-decoration none
+    color inherit
 
 .cart-preview .header
   display block
@@ -20,11 +23,11 @@
   display block
   position absolute
 
-.cart-preview.cart-summary
+.cart-preview.cart-overview
   width 100%
   position inherit
 
-.cart-preview.cart-summary .body
+.cart-preview.cart-overview .body
   display block
   position inherit
   width 100%
@@ -72,28 +75,8 @@
   width 20%
 
 .cart-preview li .remove-from-cart
-  text-indent 100%
-  display inline-block
-  overflow hidden
-  vertical-align middle
-  text-decoration none
-  color inherit
-  font-weight bold
-  width 2em
+  remove-symbol()
   float right
-
-.cart-preview li .remove-from-cart::before
-  content 'X'
-  float left
-  text-indent 0px
-  border 1px solid #ccc
-  border-radius 100%
-  width 1em
-  height 1em
-  padding 2px
-  text-align center
-  background-color #333
-  color white
 
 .cart-preview .cart-totals .label
   float left
@@ -130,3 +113,14 @@
   background-color white
   z-index 100
   border 1px solid #ccc
+
+.customizations
+  margin-top small-padding
+  margin-left 15%
+  padding small-padding
+  border 1px solid border-color
+  width 70%
+  ul
+    margin 0
+  label
+    font-weight bold
