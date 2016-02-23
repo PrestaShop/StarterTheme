@@ -1,6 +1,6 @@
 # PrestaShop Starter Theme
 
-[Starter Theme](http://build.prestashop.com/news/starter-theme-kickoff/) is a tool for designer to work efficiently,
+[Starter Theme](http://build.prestashop.com/tag/starter-theme/) is a tool for designer to work efficiently,
 it includes only what is mandatory:
 * a list of templates
 * a configuration file
@@ -14,18 +14,40 @@ Clone this repository and move the `StarterTheme` into `themes` folder.
 
 ```bash
 # in PrestaShop folder
-$~: cd themes
-$~: git clone https://github.com/PrestaShop/StarterTheme.git
-
+$ cd themes
+$ git clone https://github.com/PrestaShop/StarterTheme.git YOUR_THEME_NAME
 ```
 
-## How to use the starter theme to create a theme ? 
+## How to use the starter theme to create a theme
+
+### Step 1: create `theme.yml`
+
+First of all, you need to rename `config/theme.dist.yml` to `config/theme.yml` and edit it according to your theme name.
+
+```
+name: YOUR_THEME_DIRECTORY_NAME
+display_name: YOUR THEME NAME
+version: 1.0.0
+author:
+  name: "PrestaShop Team"
+  email: "pub@prestashop.com"
+  url: "http://www.prestashop.com"
+
+meta:
+  compatibility:
+      from: 1.7.0.0
+      to: ~
+```
+
+See [theme.yml description](https://github.com/PrestaShop/StarterTheme/blob/master/config/theme.md)
+
+### Step 2: Manage assets
 
 The Starter Theme contains the development files in the `_dev` folder.
-First of all, install the dependencies using `npm`:
+Install the dependencies using `npm`:
 
 ```bash
-$~: cd _dev && npm install
+$ cd _dev && npm install
 ```
 
 Now the dependencies are installed and correctly set up, you can customise theses files.
@@ -37,12 +59,14 @@ build new version of theses files after your modifications. You can use npm to c
 for any update and update the production version used by PrestaShop (localized in `assets` folder).
 
 ```bash
-$~: npm run watch
+$ npm run watch
 ```
+
+Note: You should probably **start by removing all existing styles**.
 
 ## Theme architecture
 
-Themes architecture since PrestaShop 1.7 has changed a lot.
+Themes architecture has changed a lot since PrestaShop 1.7.
 
 ```
 .
@@ -77,13 +101,15 @@ Themes architecture since PrestaShop 1.7 has changed a lot.
     └── wrapper.tpl
 ```
 
-* `assets` folder contains all "UI" data of your theme: javascripts, stylesheets and images;
-* `config` contains the configuration file of your theme;
-* `_dev` contains all the development assets;
-* `modules` allow you to override templates for modules, take a look at `classic` theme;
-* `plugins` contains the Smarty extensions required by the theme, if any;
-* `templates` folder contains the templates of the theme, ordered by domain categories
-* `preview.png` should be a thumbnail of your theme homepage, displayed in the back office
+| Folder | Descrption |
+|-------:|------------| 
+| `assets` | Contains all "UI" data of your theme: javascripts, stylesheets and images; | 
+| `config` | Contains the configuration file of your theme; | 
+| `_dev` | Contains all the development assets; | 
+| `modules` | Allow you to override templates for modules, take a look at `classic` | theme; | 
+| `plugins` | Contains the Smarty extensions required by the theme, if any; | 
+| `templates` | Contains the templates of the theme, ordered by domain categories | 
+| `preview.png` | Should be a thumbnail of your theme homepage, displayed in the back office | 
 
 ## Contributing
 
