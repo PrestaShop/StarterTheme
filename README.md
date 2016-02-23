@@ -101,7 +101,7 @@ Themes architecture has changed a lot since PrestaShop 1.7.
     └── wrapper.tpl
 ```
 
-| Folder | Descrption |
+| Folder | Description |
 |-------:|------------| 
 | `assets` | Contains all "UI" data of your theme: javascripts, stylesheets and images; | 
 | `config` | Contains the configuration file of your theme; | 
