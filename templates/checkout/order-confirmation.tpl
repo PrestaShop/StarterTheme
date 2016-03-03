@@ -13,8 +13,8 @@
     <h3>{l s='Your order is confirmed'}</h3>
     {if $url_to_invoice !== ''}
     <div>
-        {l s='An email has been sent to your mail address'}{* user email address *}
-        {l s='You can also'}<a href="{$url_to_invoice}">{l s='Download your invoice'}</a>
+      {l s='An email has been sent to your mail address %s.' sprintf=$customer.email}
+      {l s='You can also [1]download your invoice[/1]' tags=["<a href='{$url_to_invoice}'>"]}
     </div>
     {/if}
     {$HOOK_ORDER_CONFIRMATION nofilter}
@@ -72,9 +72,9 @@
     <div id='order-details'>
         <h3>{l s='Order details'}</h3>
         <ul>
-            <li>{l s='Order reference'} {$order.details.reference}</li>
-            <li>{l s='Payment method'} {$order.details.payment}</li>
-            <li>{l s='Shipping method'} {$order.carrier.name}</li>
+          <li>{l s='Order reference %s' sprintf=$order.details.reference}</li>
+          <li>{l s='Payment method %s' sprintf=$order.details.payment}</li>
+          <li>{l s='Shipping method %s' sprintf=$order.carrier.name}</li>
         </ul> 
     </div>
     
@@ -84,12 +84,13 @@
         {render file='customer/_partials/customer-form.tpl' ui=$register_form}  
     </div>
     {/if}
-    
+
+    {hook h='displayOrderConfirmation1'}
   </section>
 {/block}
 
 {block name='page_content_container' append}
   <section id="content-hook-order-confirmation-footer">
-    {$HOOK_ORDER_CONFIRMATION_FOOTER nofilter} {* StarterTheme: Create hook *}
+    {hook h='displayOrderConfirmation2'}
   </section>
 {/block}
