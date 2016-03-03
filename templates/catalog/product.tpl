@@ -305,7 +305,7 @@
             {if $product.is_customizable}
               <section class="product-customization">
                 <h3>{l s='Product customization'}</h3>
-                <form method="post" action="{$customizationFormTarget}" enctype="multipart/form-data">
+                <form method="post" action="{url entity=product id=$product->id}" enctype="multipart/form-data">
                   <ul>
                     {foreach from=$product.customizations.fields item="field"}
                       <li>
