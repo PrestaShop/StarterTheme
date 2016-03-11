@@ -8,25 +8,25 @@
 
   {block name='order_infos'}
     <div id="order-infos">
-      <p>{l s='Order Reference %s - placed on %s' sprintf=[$order.data.reference, $order.data.order_date]}</p>
-      {if $order.data.url_to_reorder}
-        <a href="{$order.data.url_to_reorder}">{l s='Reorder'}</a>
+      <p>{l s='Order Reference %s - placed on %s' sprintf=[$order.details.reference, $order.details.order_date]}</p>
+      {if $order.details.url_to_reorder}
+        <a href="{$order.details.url_to_reorder}">{l s='Reorder'}</a>
       {/if}
 
       <p>{l s='Carrier'} {$order.carrier.name}</p>
-      <p>{l s='Payment method'} {$order.data.payment}</p>
+      <p>{l s='Payment method'} {$order.details.payment}</p>
 
-      {if $order.data.url_to_invoice}
-        <p><a href="{$order.data.url_to_invoice}">{l s='Download your invoice as a PDF file.'}</a></p>
+      {if $order.details.url_to_invoice}
+        <p><a href="{$order.details.url_to_invoice}">{l s='Download your invoice as a PDF file.'}</a></p>
       {/if}
 
-      {if $order.data.recyclable}
+      {if $order.details.recyclable}
         <p>{l s='You have given permission to receive your order in recycled packaging.'}</p>
       {/if}
 
-      {if $order.data.gift}
+      {if $order.details.gift_message}
         <p>{l s='You have requested gift wrapping for this order.'}</p>
-        <p>{l s='Message'} {$order.data.gift_message nofilter}</p>
+        <p>{l s='Message'} {$order.details.gift_message nofilter}</p>
       {/if}
     </div>
   {/block}
@@ -53,9 +53,9 @@
     </section>
   {/block}
 
-  {if $order.data.followup}
+  {if $order.follow_up}
     <p>{l s='Click the following link to track the delivery of your order'}</p>
-    <a href="{$order.data.followup}">{$order.data.followup}</a>
+    <a href="{$order.follow_up}">{$order.follow_up}</a>
   {/if}
 
   {block name='addresses'}
@@ -81,7 +81,7 @@
   {$hook_orderdetaildisplayed}
 
   {block name='order_detail'}
-    {if $order.data.return_allowed}
+    {if $order.details.return_allowed}
       {include file='customer/_partials/order-detail-return.tpl'}
     {else}
       {include file='customer/_partials/order-detail-no-return.tpl'}

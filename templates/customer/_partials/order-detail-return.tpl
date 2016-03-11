@@ -20,10 +20,10 @@
             <input type="checkbox" id="cb_{$product.id_order_detail}" name="ids_order_detail[{$product.id_order_detail}]" value="{$product.id_order_detail}" />
           {/if}
         </td>
-        <td>{$product.product_reference}</td>
-        <td>{$product.product_name}</td>
+        <td>{$product.reference}</td>
+        <td>{$product.name}</td>
         <td>
-          {$product.product_quantity}
+          {$product.quantity}
           {if !$product.customizedDatas}
             <select name="order_qte_input[{$product.id_order_detail}]">
           {else}
@@ -35,8 +35,8 @@
             </select>
         </td>
         <td>{$product.qty_returned}</td>
-        <td>{$product.unit_price}</td>
-        <td>{$product.total_price}</td>
+        <td>{$product.price}</td>
+        <td>{$product.total}</td>
       </tr>
       {if $product.customizations}
         {foreach $product.customizations  as $customization}
@@ -68,35 +68,16 @@
     {/foreach}
 
     <tfoot>
-      {if $priceDisplay && $use_tax}
-        <tr>
-          <td colspan="2">{l s='Items (tax excl.)'}</td>
-          <td colspan="5">{$order.data.total_products}</td>
+      {foreach $order.subtotals as $line}
+        <tr class="line-{$line.type}">
+          <td colspan="5">{$line.label}</td>
+          <td colspan="2">{$line.value}</td>
         </tr>
-      {/if}
-      <tr>
-        <td colspan="2">{l s='Items'} {if $use_tax}{l s='(tax incl.)'}{/if}</td>
-        <td colspan="5">{$order.data.total_products_wt}</td>
-      </tr>
-      {if $order.data.total_discounts}
-        <tr>
-          <td colspan="2">{l s='Total vouchers'}</td>
-          <td colspan="5">{$order.data.total_discounts}</td>
-        </tr>
-      {/if}
-      {if $order.data.total_wrapping}
-      <tr>
-        <td colspan="2">{l s='Total gift wrapping cost'}</td>
-        <td colspan="5">{$order.data.total_wrapping}</td>
-      </tr>
-      {/if}
-      <tr>
-        <td colspan="2">{l s='Shipping & handling'} {if $use_tax}{l s='(tax incl.)'}{/if}</td>
-        <td colspan="5">{$order.data.total_shipping}</td>
-      </tr>
-      <tr>
-        <td colspan="2">{l s='Total'}</td>
-        <td colspan="5">{$order.data.total_paid}</td>
+      {/foreach}
+
+      <tr class="line-{$order.total.type}">
+        <td colspan="5">{$order.total.label}</td>
+        <td colspan="2">{$order.total.value}</td>
       </tr>
     </tfoot>
   </table>
@@ -115,7 +96,7 @@
   </section>
 
   <footer class="form-footer">
-    <input type="hidden" name="id_order" value="{$order.data.id}" />
+    <input type="hidden" name="id_order" value="{$order.details.id}" />
     <button type="submit" name="submitReturnMerchandise">
       {l s='Make an RMA slip'}
     </button>

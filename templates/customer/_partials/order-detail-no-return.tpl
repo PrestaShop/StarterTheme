@@ -11,11 +11,11 @@
 
   {foreach from=$order.products item=product}
     <tr>
-      <td>{$product.product_reference}</td>
-      <td>{$product.product_name}</td>
-      <td>{$product.product_quantity}</td>
-      <td>{$product.unit_price}</td>
-      <td>{$product.total_price}</td>
+      <td>{$product.reference}</td>
+      <td>{$product.name}</td>
+      <td>{$product.quantity}</td>
+      <td>{$product.price}</td>
+      <td>{$product.total}</td>
     </tr>
     {if $product.customizations}
       {foreach $product.customizations  as $customization}
@@ -39,35 +39,16 @@
   {/foreach}
 
   <tfoot>
-    {if $priceDisplay && $use_tax}
-      <tr>
-        <td>{l s='Items (tax excl.)'}</td>
-        <td colspan="4">{$order.data.total_products}</td>
+    {foreach $order.subtotals as $line}
+      <tr class="line-{$line.type}">
+        <td colspan="4">{$line.label}</td>
+        <td>{$line.value}</td>
       </tr>
-    {/if}
-    <tr>
-      <td>{l s='Items'} {if $use_tax}{l s='(tax incl.)'}{/if}</td>
-      <td colspan="4">{$order.data.total_products_wt}</td>
-    </tr>
-    {if $order.data.total_discounts}
-      <tr>
-        <td>{l s='Total vouchers'}</td>
-        <td colspan="4">{$order.data.total_discounts}</td>
-      </tr>
-    {/if}
-    {if $order.data.total_wrapping}
-    <tr>
-      <td>{l s='Total gift wrapping cost'}</td>
-      <td colspan="4">{$order.data.total_wrapping}</td>
-    </tr>
-    {/if}
-    <tr>
-      <td>{l s='Shipping & handling'} {if $use_tax}{l s='(tax incl.)'}{/if}</td>
-      <td colspan="4">{$order.data.total_shipping}</td>
-    </tr>
-    <tr>
-      <td>{l s='Total'}</td>
-      <td colspan="4">{$order.data.total_paid}</td>
+    {/foreach}
+
+    <tr class="text-xs-right line-{$order.total.type}">
+      <td colspan="4">{$order.total.label}</td>
+      <td>{$order.total.value}</td>
     </tr>
   </tfoot>
 </table>
