@@ -69,18 +69,20 @@
             {block name='product_reference'}
               {if $product.reference}
                 <p id="product-reference">
-                  <label>{l s='Reference:'} </label>
+                  <label>{l s='Reference'}:</label>
                   <span itemprop="sku">{$product.reference}</span>
                 </p>
               {/if}
             {/block}
 
             {block name='product_condition'}
-              <p id="product-condition">
-                <label>{l s='Condition:'} </label>
-                <link itemprop="itemCondition" href="{$product.condition.schema_url}"/>
-                <span>{$product.condition.label}</span>
-              </p>
+              {if $product.condition}
+                <p id="product-condition">
+                  <label>{l s='Condition'}:</label>
+                  <link itemprop="itemCondition" href="{$product.condition.schema_url}"/>
+                  <span>{$product.condition.label}</span>
+                </p>
+              {/if}
             {/block}
 
             {block name='product_description_short'}
