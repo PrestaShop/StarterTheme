@@ -48,7 +48,7 @@
     </section>
 
     <footer class="form-footer">
-      <input type="hidden" name="id_order" value="{$order.data.id}" />
+      <input type="hidden" name="id_order" value="{$order.details.id}" />
       <button type="submit" name="submitMessage">
         {l s='Send'}
       </button>

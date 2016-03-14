@@ -69,7 +69,7 @@
             {block name='product_reference'}
               {if $product.reference}
                 <p id="product-reference">
-                  <label>{l s='Reference:'} </label>
+                  <label>{l s='Reference'}:</label>
                   <span itemprop="sku">{$product.reference}</span>
                 </p>
               {/if}
@@ -78,9 +78,9 @@
             {block name='product_condition'}
               {if $product.condition}
                 <p id="product-condition">
-                  <label>{l s='Condition:'} </label>
-                  <link itemprop="itemCondition" href="{$product_conditions.{$product.condition}.schema_url}"/>
-                  <span>{$product_conditions.{$product.condition}.label}</span>
+                  <label>{l s='Condition'}:</label>
+                  <link itemprop="itemCondition" href="{$product.condition.schema_url}"/>
+                  <span>{$product.condition.label}</span>
                 </p>
               {/if}
             {/block}
@@ -302,30 +302,7 @@
           {/block}
 
           {block name='product_customization'}
-            {if $product.is_customizable}
-              <section class="product-customization">
-                <h3>{l s='Product customization'}</h3>
-                <form method="post" action="{$customizationFormTarget}" enctype="multipart/form-data">
-                  <ul>
-                    {foreach from=$product.customizations.fields item="field"}
-                      <li>
-                        <label>{$field.label}</label>
-                        {if $field.type == 'text'}
-                          <textarea {if $field.required} required {/if} name="{$field.input_name}">{$field.text}</textarea>
-                        {elseif $field.type == 'image'}
-                          {if $field.is_customized}
-                            <img src="{$field.image.small.url}">
-                            <a class="remove-image" href="{$field.remove_image_url}" rel="nofollow">{l s='Remove Image'}</a>
-                          {/if}
-                          <input {if $field.required} required {/if} type="file" name="{$field.input_name}">
-                        {/if}
-                      </li>
-                    {/foreach}
-                  </ul>
-                  <button name="submitCustomizedDatas">{l s='Save Customization'}</button>
-                </form>
-              </section>
-            {/if}
+            {include file='catalog/_partials/product-customizations.tpl' customizations=$product.customizations}
           {/block}
 
           {block name='product_features'}
