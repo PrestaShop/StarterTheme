@@ -17,6 +17,6 @@
         </li>
       {/foreach}
     </ul>
-    <button name="submitCustomizedDatas">{l s='Save Customization'}</button>
+    <button name="submitCustomizedData">{l s='Save Customization'}</button>
   </form>
 </section>
