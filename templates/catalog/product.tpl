@@ -301,11 +301,9 @@
             {/if}
           {/block}
 
-          {if $product.is_customizable}
-            {block name='product_customization'}
-              {include file='catalog/_partials/product-customizations.tpl' customizations=$product.customizations}
-            {/block}
-          {/if}
+          {block name='product_customization'}
+            {include file='catalog/_partials/product-customizations.tpl' customizations=$product.customizations}
+          {/block}
 
           {block name='product_features'}
             {if $product.features}
