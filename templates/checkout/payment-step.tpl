@@ -85,6 +85,8 @@
           {/if}
         </div>
       {/foreach}
+    {foreachelse}
+      <p class="warning">{l s='Unfortunately, there are no payment method available.'}</p>
     {/foreach}
   </div>
 
