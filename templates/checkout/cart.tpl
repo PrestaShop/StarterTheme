@@ -1,38 +1,50 @@
 {extends file=$layout}
 
 {block name='content'}
-  <section id="main">
 
+  <section id="main">
     <h1>{l s='Shopping Cart'}</h1>
 
     {block name='cart_overview'}
       {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
     {/block}
 
-    <ul>
-      <li><a href="{$urls.pages.index}">{l s='Continue shopping'}</a></li>
-    </ul>
-
-    {hook h='displayShoppingCart'}
-
-    {block name='cart_voucher'}
-      {include file='checkout/_partials/cart-voucher.tpl'}
-    {/block}
-    
-    {hook h='displayShoppingCart'}
-
-    {block name='cart_totals'}
-      {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
+    {block name='continue_shopping'}
+      <a href="{$urls.pages.index}">
+        {l s='Continue shopping'}
+      </a>
     {/block}
 
-    <div class="checkout">
-      <ul>
-        <li><a href="{$urls.pages.order}">{l s='Checkout'}</a></li>
-      </ul>
-      {hook h='displayExpressCheckout'}
+    <div>
+      {hook h='displayShoppingCart'}
     </div>
 
-    {hook h='displayShoppingCartReassurance'}
+    {block name='cart_summary'}
+        {block name='cart_summary_line'}
+          {include file='checkout/_partials/cart-summary-items-subtotal.tpl' cart=$cart}
+        {/block}
 
+        {block name='cart_voucher'}
+          {include file='checkout/_partials/cart-voucher.tpl'}
+        {/block}
+
+        {hook h='displayShoppingCart'}
+
+        {block name='cart_totals'}
+          {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
+        {/block}
+
+        {block name='cart_actions'}
+          <div>
+            <a href="{$urls.pages.order}">{l s='Checkout'}</a>
+            {hook h='displayExpressCheckout'}
+          </div>
+        {/block}
+
+    {/block}
+
+    {block name='display_reassurance'}
+      {hook h='displayReassurance'}
+    {/block}
   </section>
 {/block}
