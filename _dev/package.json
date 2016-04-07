@@ -4,7 +4,7 @@
   "description": "Tools to help while developing the starter theme",
   "main": "index.js",
   "scripts": {
-    "watch": "stylus --watch",
+    "watch": "stylus --watch --sourcemap --include-css css/dev.styl -o ../assets/css",
     "build": "stylus --compress --sourcemap --include-css css/dev.styl -o ../assets/css",
     "watch-build": "stylus --watch --compress --sourcemap --include-css css/dev.styl -o ../assets/css"
   },
