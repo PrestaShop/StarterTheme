@@ -16,7 +16,7 @@
     {/block}
 
     <div>
-      {hook h='displayShoppingCart'}
+      {hook h='displayShoppingCartFooter'}
     </div>
 
     {block name='cart_summary'}
