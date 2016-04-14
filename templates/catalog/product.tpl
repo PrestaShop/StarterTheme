@@ -138,29 +138,7 @@
                                 {/block}
 
                                 {block name='product_add_to_cart'}
-                                    {if $product.add_to_cart_url}
-                                        {*<form class="add-to-cart" action="{$urls.pages.cart}" method="post">*}
-
-                                        {block name='product_quantity'}
-                                            <p class="product-quantity">
-                                                <label for="quantity_wanted">{l s='Quantity'}</label>
-                                                <input type="number" min="1" name="qty" id="quantity_wanted" value="{$product.quantity_wanted}" />
-                                            </p>
-                                        {/block}
-
-                                        {block name='product_minimal_quantity'}
-                                            {if $product.minimal_quantity > 1}
-                                                <p class="product-minimal-quantity">
-                                                    {l s='The minimum purchase order quantity for the product is %s.' sprintf=$product.minimal_quantity}
-                                                </p>
-                                            {/if}
-                                        {/block}
-
-                                        <button class="add-to-cart" type="submit" name="add" data-button-action="add-to-cart">{l s='Add to cart'}</button>
-
-                                        {hook h='displayProductButtons' product=$product}
-                                        {*</form>*}
-                                    {/if}
+                                  {include file='catalog/_partials/product-add-to-cart.tpl'}
                                 {/block}
 
                                 {block name='product_refresh'}
