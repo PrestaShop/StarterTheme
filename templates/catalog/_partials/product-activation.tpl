@@ -1,9 +1,6 @@
-{if $adminActionDisplay}
-  {block name='draft_links'}
-    <ul>
-      {foreach from=$draftLinks item=draftLink}
-        <li><a href="{$draftLink.url}">{$draftLink.title}</a></li>
-      {/foreach}
-    </ul>
-  {/block}
+{if $page.admin_notifications}
+  <div role="alert">
+    {foreach $page.admin_notifications as $notif}
+      <p>{$notif.message}</p>
+    {/foreach}
 {/if}
