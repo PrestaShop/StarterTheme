@@ -51,6 +51,10 @@
       <p class="warning">{l s='Unfortunately, there are no carriers available for your delivery address.'}</p>
     {/if}
   </div>
+  
+  <div id="hook-display-after-carrier">
+    {$hookDisplayAfterCarrier nofilter}
+  </div>
 
   <div id="extra_carrier"></div>
 {/block}
