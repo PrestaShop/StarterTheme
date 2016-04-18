@@ -1,6 +1,11 @@
 <span class="product-image"><img src="{$product.cover.small.url}"></span>
 <span class="product-name"><a href="{$product.url}">{$product.name}</a></span>
-<span class="product-name">{$product.attributes}</span>
+{foreach from=$product.attributes key="attribute" item="value"}
+  <span class="product-attributes">
+    <span class="label">{$attribute}:</span>
+    <span class="value">{$value}</span>
+  </span>
+{/foreach}
 <span class="product-availability">{$product.availability}</span>
 <span class="product-price">{$product.price}</span>
 {if $product.down_quantity_url}<a href="{$product.down_quantity_url}" data-link-action="update-quantity">-</a>{/if}
