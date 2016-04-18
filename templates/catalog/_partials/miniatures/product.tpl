@@ -1,4 +1,4 @@
-<article class="product-miniature" itemscope itemtype="http://schema.org/Product">
+<article class="product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 
   {block name='product_thumbnail'}
     <a href="{$product.url}" class="thumbnail product-thumbnail">

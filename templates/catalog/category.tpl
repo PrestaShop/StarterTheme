@@ -19,7 +19,7 @@
               {foreach from=$subcategories item="subcategory"}
                 <li>
                   {block name='category_miniature'}
-                    {include file='catalog/category-miniature.tpl' category=$subcategory}
+                    {include file='catalog/_partials/miniatures/category.tpl' category=$subcategory}
                   {/block}
                 </li>
               {/foreach}
@@ -30,7 +30,7 @@
     {/block}
 
     {block name='category_products'}
-      {include file='catalog/products.tpl' products=$products}
+      {include file='catalog/products.tpl' products=$products label=$category.name}
     {/block}
 
   </section>
