@@ -30,7 +30,7 @@
     {/block}
 
     {block name='category_products'}
-      {include file='catalog/products.tpl' products=$products}
+      {include file='catalog/products.tpl' products=$products label=$category.name}
     {/block}
 
   </section>
