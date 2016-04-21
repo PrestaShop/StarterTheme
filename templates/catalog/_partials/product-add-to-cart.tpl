@@ -4,7 +4,7 @@
     {block name='product_quantity'}
         <p class="product-quantity">
             <label for="quantity_wanted">{l s='Quantity'}</label>
-            <input type="number" min="1" name="qty" id="quantity_wanted" value="{$product.quantity_wanted}" />
+            <input type="number" min="1" name="qty" id="quantity_wanted" value="{$product.quantity_wanted}">
         </p>
     {/block}
 

@@ -38,7 +38,7 @@
               <ul>
                 {foreach from=$customization.fields item=field}
                   {if $field.type == 'image'}
-                    <li><img src="{$field.image.small.url}" alt="" /></li>
+                    <li><img src="{$field.image.small.url}" alt=""></li>
                   {elseif $field.type == 'text'}
                     <li>{$field.label} : {$field.text}</li>
                   {/if}
@@ -62,7 +62,7 @@
         <li>{l s='Please see the PDF return slip ([1]for the correct address[/1]).' tags=['<a href="'|cat:$orderRet.return_pdf_url|cat:'">']}</li>
       </ul>
       {l s='When we receive your package, we will notify you by email. We will then begin processing order reimbursement.'}
-      <br /><br /><a href="{$urls.pages.contact}">{l s='Please let us know if you have any questions.'}</a>
+      <br><br><a href="{$urls.pages.contact}">{l s='Please let us know if you have any questions.'}</a>
       <p>{l s='If the conditions of return listed above are not respected, we reserve the right to refuse your package and/or reimbursement.'}</p>
     </section>
   {/if}

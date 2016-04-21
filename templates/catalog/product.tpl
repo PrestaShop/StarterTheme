@@ -1,23 +1,23 @@
 {extends file=$layout}
 
 {block name='head_seo' prepend}
-  <link rel="canonical" href="{$product.canonical_url}" />
+  <link rel="canonical" href="{$product.canonical_url}">
 {/block}
 
 {block name='head' append}
-  <meta property="og:type" content="product" />
-  <meta property="og:url" content="{$urls.current_url}" />
-  <meta property="og:title" content="{$page.title}" />
-  <meta property="og:site_name" content="{$shop.name}" />
-  <meta property="og:description" content="{$page.description}" />
-  <meta property="og:image" content="{$product.cover.large.url}" />
-  <meta property="product:pretax_price:amount" content="{$product.price_tax_exc}" />
-  <meta property="product:pretax_price:currency" content="{$currency.iso_code}" />
-  <meta property="product:price:amount" content="{$product.price_amount}" />
-  <meta property="product:price:currency" content="{$currency.iso_code}" />
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="{$urls.current_url}">
+  <meta property="og:title" content="{$page.title}">
+  <meta property="og:site_name" content="{$shop.name}">
+  <meta property="og:description" content="{$page.description}">
+  <meta property="og:image" content="{$product.cover.large.url}">
+  <meta property="product:pretax_price:amount" content="{$product.price_tax_exc}">
+  <meta property="product:pretax_price:currency" content="{$currency.iso_code}">
+  <meta property="product:price:amount" content="{$product.price_amount}">
+  <meta property="product:price:currency" content="{$currency.iso_code}">
   {if isset($product.weight) && ($product.weight != 0)}
-    <meta property="product:weight:value" content="{$product.weight}" />
-    <meta property="product:weight:units" content="{$product.weight_unit}" />
+    <meta property="product:weight:value" content="{$product.weight}">
+    <meta property="product:weight:units" content="{$product.weight_unit}">
   {/if}
 {/block}
 
@@ -124,8 +124,8 @@
           <div class="product-actions">
             {block name='product_buy'}
               <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
-                <input type="hidden" name="token" value="{$static_token}" />
-                <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id" />
+                <input type="hidden" name="token" value="{$static_token}">
+                <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
 
                 {block name='product_prices'}
                   {include file='catalog/_partials/product-prices.tpl'}
@@ -141,7 +141,7 @@
                 {/block}
 
                 {block name='product_refresh'}
-                  <input class="product-refresh ps-hidden-by-js" name="refresh" type="submit" value="{l s='Refresh'}" />
+                  <input class="product-refresh ps-hidden-by-js" name="refresh" type="submit" value="{l s='Refresh'}">
                 {/block}
               </form>
             {/block}

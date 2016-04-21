@@ -16,7 +16,7 @@
 
         <label>
           <span>{l s='Email address'}</span>
-          <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}" />
+          <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}">
         </label>
 
       </section>
