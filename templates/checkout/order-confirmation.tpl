@@ -70,30 +70,30 @@
             </tr>
             {/foreach}
         </table>
-        
+
         <hr>
-        
+
         <table>
             <tr>
                 <td>{l s='Promo code'}</td>
-                <td>{$order.subtotals.discounts.amount}</td>
+                <td>{$order.subtotals.discounts.value}</td>
             </tr>
             <tr>
                 <td>{l s='Shipping cost'}</td>
-                <td>{$order.subtotals.shipping.amount}</td>
+                <td>{$order.subtotals.shipping.value}</td>
             </tr>
             {if isset($order.subtotals.tax) }
             <tr>
                 <td>{l s='Taxes'}</td>
-                <td>{$order.subtotals.tax.amount}</td>
+                <td>{$order.subtotals.tax.value}</td>
             </tr>
             {/if}
             <tr>
                 <td>{l s='Total'}</td>
-                <td>{$order.total.amount}</td>
+                <td>{$order.total.value}</td>
             </tr>
         </table>
-        
+
     </div>
     <div id='order-details'>
         <h3>{l s='Order details'}</h3>
@@ -101,13 +101,13 @@
           <li>{l s='Order reference %s' sprintf=$order.details.reference}</li>
           <li>{l s='Payment method %s' sprintf=$order.details.payment}</li>
           <li>{l s='Shipping method %s' sprintf=$order.carrier.name}</li>
-        </ul> 
+        </ul>
     </div>
-    
+
     {if $is_guest}
     <div id='registration-form'>
         <h4>{l s='Save time on your next order, sign up now'}</h4>
-        {render file='customer/_partials/customer-form.tpl' ui=$register_form}  
+        {render file='customer/_partials/customer-form.tpl' ui=$register_form}
     </div>
     {/if}
 
