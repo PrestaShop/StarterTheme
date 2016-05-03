@@ -64,6 +64,7 @@
                         </ul>
                       </div>
                     {/if}
+                    {hook h='displayProductPriceBlock' product=$product type="unit_price"}
                 </td>
                 <td>{$product.quantity}</td>
                 <td>{$product.price}</td>

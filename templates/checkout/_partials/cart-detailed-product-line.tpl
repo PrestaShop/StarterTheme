@@ -3,6 +3,7 @@
 <span class="product-name">{$product.attributes}</span>
 <span class="product-availability">{$product.availability}</span>
 <span class="product-price">{$product.price}</span>
+{hook h='displayProductPriceBlock' product=$product type="unit_price"}
 {if $product.down_quantity_url}<a href="{$product.down_quantity_url}" data-link-action="update-quantity">-</a>{/if}
 <span class="product-quantity">{$product.quantity}</span>
 {if $product.up_quantity_url}<a href="{$product.up_quantity_url}" data-link-action="update-quantity">+</a>{/if}
