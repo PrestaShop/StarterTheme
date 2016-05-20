@@ -12,7 +12,7 @@
 {/block}
 
 {block "form_buttons"}
-    <button type="submit" class="continue" name="continue" value="1">
+    <button class="continue" name="continue" type="submit" value="1">
         {l s='Continue'}
     </button>
 {/block}
