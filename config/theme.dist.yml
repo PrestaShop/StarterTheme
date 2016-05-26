@@ -32,14 +32,14 @@ global_settings:
       displayNav:
         - blocklanguages
         - blockcurrencies
-        - blockuserinfo
+        - ps_customersignin
       displayHome:
-        - homeslider
-        - homefeatured
-        - blockbanner
+        - ps_imageslider
+        - ps_featuredproducts
+        - ps_banner
       displayFooter:
-        - blocknewsletter
-        - blockcontact
+        - ps_emailsubscription
+        - ps_contactinfo
 
   image_types:
     cart_default:
