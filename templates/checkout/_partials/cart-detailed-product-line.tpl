@@ -6,6 +6,26 @@
     <span class="value">{$value}</span>
   </span>
 {/foreach}
+{if $product.customizations|count}
+  {foreach from=$product.customizations item="customization"}
+    {foreach from=$customization.fields item="field"}
+      <span class="product-line-info">
+        <span class="label">{$field.label}:</span>
+        <span class="value">
+          {if $field.type == 'text'}
+            {if (int)$field.id_module}
+              {$field.text nofilter}
+            {else}
+             {$field.text}
+            {/if}
+          {elseif $field.type == 'image'}
+            <img src="{$field.image.small.url}">
+          {/if}
+        </span>
+      </span>
+    {/foreach}
+  {/foreach}
+{/if}
 <span class="product-availability">{$product.availability}</span>
 <span class="product-price">{$product.price}</span>
 {if $product.unit_price_full}
@@ -31,35 +51,3 @@
 </a>
 
 <span class="product-price">{$product.total}</span>
-{if $product.customizations|count}
-  <div class="customizations">
-    <ul>
-      {foreach from=$product.customizations item="customization"}
-      <li>
-        {if $customization.down_quantity_url}
-          <a href="{$customization.down_quantity_url}" data-link-action="update-quantity">-</a>
-        {/if}
-        <span class="product-quantity">{$customization.quantity}</span>
-        {if $customization.up_quantity_url}
-          <a href="{$customization.up_quantity_url}" data-link-action="update-quantity">+</a>
-        {/if}
-        <a class="remove-from-cart" data-link-action="delete-from-cart" href="{$customization.remove_from_cart_url}">
-          {l s='Remove'}
-        </a>
-        <ul>
-          {foreach from=$customization.fields item="field"}
-          <li>
-            <label>{$field.label}</label>
-            {if $field.type == 'text'}
-              <span>{$field.text}</span>
-            {else if $field.type == 'image'}
-              <img src="{$field.image.small.url}">
-            {/if}
-          </li>
-          {/foreach}
-        </ul>
-      </li>
-      {/foreach}
-    </ul>
-  </div>
-{/if}
