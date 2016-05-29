@@ -3,4 +3,5 @@
     {foreach $page.admin_notifications as $notif}
       <p>{$notif.message}</p>
     {/foreach}
+  </div>
 {/if}
