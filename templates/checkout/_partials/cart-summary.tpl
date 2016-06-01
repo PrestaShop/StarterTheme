@@ -1,4 +1,5 @@
 <section id="checkout-cart-summary" class="-js-cart" data-refresh-url="{$urls.pages.cart}?ajax=1">
+  {hook h='displayCheckoutSummaryTop'}
   {block name='cart_summary_header'}
     <header>
       <h1 class="h3">{l s='Your order'}</h1>
@@ -19,7 +20,7 @@
   {block name='cart_voucher'}
     {include file='checkout/_partials/cart-voucher.tpl'}
   {/block}
-  
+
   {block name='cart_totals'}
     {include file='checkout/_partials/cart-summary-totals.tpl' cart=$cart}
   {/block}
