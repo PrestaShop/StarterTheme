@@ -50,4 +50,6 @@
   {l s='Remove' mod="blockcart"}
 </a>
 
+{hook h='displayCartExtraProductActions' product=$product}
+
 <span class="product-price">{$product.total}</span>
