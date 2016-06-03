@@ -2,7 +2,7 @@
 
 {* TODO StarterTheme: HOOKS!!! *}
 
-<form action="{$action}" method="post">
+<form id="login-form" action="{$action}" method="post">
 
   <section class="form-fields">
     {block name='form_fields'}
@@ -23,7 +23,7 @@
   <footer class="form-footer">
     <input type="hidden" name="submitLogin" value="1">
     {block name='form_buttons'}
-      <button type="submit">{l s='Sign in'}</button>
+      <button data-link-action="sign-in" type="submit">{l s='Sign in'}</button>
     {/block}
   </footer>
 
