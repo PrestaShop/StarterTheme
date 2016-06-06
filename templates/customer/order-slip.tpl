@@ -21,7 +21,7 @@
         {foreach from=$credit_slips item=slip}
           <tr>
             <td>{$slip.credit_slip_number}</td>
-            <td><a href="#">{$slip.order_number}</a></td>
+            <td><a href="{$slip.order_url_details}" data-link-action="view-order-details">{$slip.order_reference}</a></td>
             <td>{$slip.credit_slip_date}</td>
             <td><a href="{$slip.url}">{l s='PDF'}</a></td>
           </tr>
