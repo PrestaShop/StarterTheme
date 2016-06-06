@@ -30,8 +30,8 @@
     {if $customer.addresses|count > 0}
       <a href="?cancelAddress={$type}">{l s='Cancel'}</a>
     {/if}
-      <button type="submit" class="continue" name="continue" value="1">
-          {l s='Continue'}
-      </button>
+    <button type="submit" class="continue" name="confirm-addresses" value="1">
+      {l s='Continue'}
+    </button>
   {/if}
 {/block}

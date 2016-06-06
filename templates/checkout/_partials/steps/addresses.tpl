@@ -76,8 +76,8 @@
   {/if}
 
   {if !$form_has_continue_button}
-    <button type="submit" class="continue" name="continue" value="1">
-        {l s='Continue'}
+    <button type="submit" class="continue" name="confirm-addresses" value="1">
+      {l s='Continue'}
     </button>
   {/if}
 
