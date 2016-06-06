@@ -70,8 +70,8 @@
     {/foreach}
 
     <tr>
-      <td>{$total.label} {$tax_label}</td>
-      <td>{$total.value}</td>
+      <td>{$order.totals.total.label} {$order.labels.tax_short}</td>
+      <td>{$order.totals.total.value}</td>
     </tr>
   </table>
 

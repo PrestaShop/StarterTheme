@@ -50,7 +50,7 @@
 
     {block name='product_unit_price'}
       {if $displayUnitPrice}
-        <p class="product-unit-price">{convertPrice price=$unit_price} {l s='per %s' sprintf=$product.unity}</p>
+        <p class="product-unit-price">{l s='(%s)' sprintf=[$product.unit_price_full]}</p>
       {/if}
     {/block}
 

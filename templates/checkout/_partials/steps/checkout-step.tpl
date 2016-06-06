@@ -1,7 +1,7 @@
 <section id="{$identifier}"
   class="{[
     'checkout-step' => true,
-    '-current' => $step_is_current,
+    '-js-current' => $step_is_current,
     '-reachable' => $step_is_reachable,
     '-complete' => $step_is_complete
   ]|classnames}"

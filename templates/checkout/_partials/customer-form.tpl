@@ -12,7 +12,13 @@
 {/block}
 
 {block "form_buttons"}
-    <button class="continue" name="continue" type="submit" value="1">
-        {l s='Continue'}
-    </button>
+  <button
+    class="continue"
+    name="continue"
+    data-link-action="register-new-customer"
+    type="submit"
+    value="1"
+  >
+    {l s='Continue'}
+  </button>
 {/block}
