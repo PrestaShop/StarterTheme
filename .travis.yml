@@ -1,0 +1,62 @@
+language: php
+
+services:
+  - docker
+
+addons:
+    apt:
+        packages:
+        - postfix
+        - libappindicator1
+        - fonts-liberation
+    sauce_connect: true
+
+cache:
+  directories:
+    - $HOME/.npm
+
+sudo: required
+dist: trusty
+group: edge
+
+env:
+  - PHP_VERSION=5.4
+  - PHP_VERSION=5.5
+  - PHP_VERSION=5.6
+  - PHP_VERSION=7
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+
+before_script:
+  - docker run -e PS_INSTALL_AUTO=0 -e PS_FOLDER_ADMIN=admin-dev -e PS_FOLDER_INSTALL=install-dev -p 80:80 -tid --name=prestashop -v $TRAVIS_BUILD_DIR:/var/www/html/themes/StarterTheme  prestashop/prestashop-git:$PHP_VERSION
+  - docker exec prestashop rm -Rf themes/classic
+  - cp config/theme.dist.yml config/theme.yml
+  - docker cp travis-scripts/parameters.yml.travis prestashop:/var/www/html/app/config/parameters.yml
+  - docker exec prestashop php install-dev/index_cli.php --db_create=1 --db_password=admin --name=prestashop.unit.test --password=123456789
+  - docker cp prestashop:/var/www/html/tests/Selenium selenium
+  - cp travis-scripts/settings.travis.js selenium/settings.js
+  - cd selenium
+  - npm install
+  - docker exec prestashop php tests/Selenium/prepare-shop.php
+  - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_10.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :10 -ac -screen 0 1600x1200x16
+  - DISPLAY=:10 npm run selenium &> /dev/null &
+
+  - export CHROME_BIN=/usr/bin/google-chrome
+
+notifications:
+  email: false
+
+script:
+  - curl http://localhost/
+
+after_script:
+  - docker logs prestashop
+  - google-chrome --version
+
+after_failure:
+
