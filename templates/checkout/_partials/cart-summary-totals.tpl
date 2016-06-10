@@ -12,8 +12,8 @@
 
   {block name='cart_summary_totals'}
     <div class="cart-summary-totals">
-      <span class="label">{$cart.total.label}</span>
-      <span class="value">{$cart.total.value}</span>
+      <span class="label">{$cart.totals.total.label}</span>
+      <span class="value">{$cart.totals.total.value}</span>
     </div>
   {/block}
 </div>
