@@ -8,16 +8,21 @@
 
   {block name='order_infos'}
     <div id="order-infos">
-      <p>{l s='Order Reference %s - placed on %s' sprintf=[$order.details.reference, $order.details.order_date]}</p>
-      {if $order.details.url_to_reorder}
-        <a href="{$order.details.url_to_reorder}">{l s='Reorder'}</a>
+      <p>
+        {l
+          s='Order Reference %s - placed on %s'
+          sprintf=[$order.details.reference, $order.details.order_date]
+        }
+      </p>
+      {if $order.details.reorder_url}}
+        <a href="{$order.details.reorder_url}">{l s='Reorder'}</a>
       {/if}
 
       <p>{l s='Carrier'} {$order.carrier.name}</p>
       <p>{l s='Payment method'} {$order.details.payment}</p>
 
-      {if $order.details.url_to_invoice}
-        <p><a href="{$order.details.url_to_invoice}">{l s='Download your invoice as a PDF file.'}</a></p>
+      {if $order.details.invoice_url}
+        <p><a href="{$order.details.invoice_url}">{l s='Download your invoice as a PDF file.'}</a></p>
       {/if}
 
       {if $order.details.recyclable}
@@ -81,7 +86,7 @@
   {$hook_orderdetaildisplayed}
 
   {block name='order_detail'}
-    {if $order.details.return_allowed}
+    {if $order.details.is_returnable}
       {include file='customer/_partials/order-detail-return.tpl'}
     {else}
       {include file='customer/_partials/order-detail-no-return.tpl'}

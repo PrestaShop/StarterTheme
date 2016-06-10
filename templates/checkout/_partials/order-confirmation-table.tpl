@@ -3,7 +3,7 @@
   <h3>{l s='Order items'}</h3>
 
   <table>
-    {foreach from=$order.products item=product}
+    {foreach from=$products item=product}
       <tr>
         <td>
           <span class="product-image media-middle">
@@ -62,16 +62,22 @@
   <hr>
 
   <table>
-    {foreach $order.subtotals as $subtotal}
-      <tr>
-        <td>{$subtotal.label}</td>
-        <td>{$subtotal.value}</td>
-      </tr>
+    {foreach $subtotals as $subtotal}
+      {if $subtotal.type !== 'tax'}
+        <tr>
+          <td>{$subtotal.label}</td>
+          <td>{$subtotal.value}</td>
+        </tr>
+      {/if}
     {/foreach}
 
     <tr>
-      <td>{$order.totals.total.label} {$order.labels.tax_short}</td>
-      <td>{$order.totals.total.value}</td>
+      <td>{$totals.total.label} {$labels.tax_short}</td>
+      <td>{$totals.total.value}</td>
+    </tr>
+    <tr>
+      <td>{$subtotals.tax.label}</td>
+      <td>{$subtotal.tax.value}</td>
     </tr>
   </table>
 
