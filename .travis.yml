@@ -40,23 +40,23 @@ before_script:
   - docker exec prestashop php install-dev/index_cli.php --db_create=1 --db_password=admin --name=prestashop.unit.test --password=123456789
   - docker cp prestashop:/var/www/html/tests/Selenium selenium
   - cp travis-scripts/settings.travis.js selenium/settings.js
-  - cd selenium
-  - npm install
+  - cd selenium && npm install
   - docker exec prestashop php tests/Selenium/prepare-shop.php
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_10.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :10 -ac -screen 0 1600x1200x16
-  - DISPLAY=:10 npm run selenium &> /dev/null &
-
+  - DISPLAY=:10 node_modules/.bin/selenium-standalone start &> /tmp/selenium.log &
+  - sleep 5
   - export CHROME_BIN=/usr/bin/google-chrome
 
 notifications:
   email: false
 
 script:
-  - curl http://localhost/
+  - ./node_modules/.bin/wdio wdio.conf.js
 
 after_script:
+  - curl http://localhost/en/
   - docker logs prestashop
   - google-chrome --version
+  - cat /tmp/selenium.log
 
 after_failure:
-
