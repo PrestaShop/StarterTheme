@@ -1,5 +1,7 @@
 # PrestaShop Starter Theme
 
+[![Build Status](https://travis-ci.org/PrestaShop/StarterTheme.svg?branch=master)](https://travis-ci.org/PrestaShop/StarterTheme)
+
 [Starter Theme](http://build.prestashop.com/tag/starter-theme/) is a tool for designer to work efficiently,
 it includes only what is mandatory:
 * a list of templates
