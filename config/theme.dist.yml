@@ -34,6 +34,8 @@ global_settings:
         - blocklanguages
         - blockcurrencies
         - ps_customersignin
+      displayTop:
+        - ps_mainmenu
       displayHome:
         - ps_imageslider
         - ps_featuredproducts
