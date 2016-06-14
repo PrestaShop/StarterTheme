@@ -37,6 +37,7 @@ before_script:
   - docker exec prestashop rm -Rf themes/classic
   - cp config/theme.dist.yml config/theme.yml
   - docker cp travis-scripts/parameters.yml.travis prestashop:/var/www/html/app/config/parameters.yml
+  - bash travis-scripts/wait-for-sql.sh
   - docker exec prestashop php install-dev/index_cli.php --db_create=1 --db_password=admin --name=prestashop.unit.test --password=123456789
   - docker cp prestashop:/var/www/html/tests/Selenium selenium
   - cp travis-scripts/settings.travis.js selenium/settings.js
