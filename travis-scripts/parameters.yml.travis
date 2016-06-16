@@ -1,6 +1,6 @@
 # This file is a used by travis install with specific setting.
 parameters:
-    database_host:     localhost
+    database_host:     mysql
     database_port:     ~
     database_name:     prestashop
     database_user:     root
