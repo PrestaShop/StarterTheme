@@ -16,9 +16,7 @@
     </header>
 
     {block name='notifications'}
-      {block name='notifications'}
-        {include file='_partials/notifications.tpl'}
-      {/block}
+      {include file='_partials/notifications.tpl'}
     {/block}
 
     {block name='content'}
