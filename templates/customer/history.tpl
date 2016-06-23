@@ -36,8 +36,8 @@
               </span>
             </td>
             <td>
-              {if $order.details.invoice_ur}
-                <a href="{$order.details.invoice_ur}" class="order-invoice-link">{l s='PDF'}</a>
+              {if $order.details.invoice_url}
+                <a href="{$order.details.invoice_url}" class="order-invoice-link">{l s='PDF'}</a>
               {else}
                 -
               {/if}
