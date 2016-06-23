@@ -17,9 +17,7 @@
     {block name='page_content_container'}
       <section id="content" class="page-content page-maintenance">
         {block name='page_content'}
-          {l s='We are currently updating our shop and will be back really soon.'}
-          <br>
-          {l s='Thanks for your patience.'}
+          {$maintenance_text nofilter}
         {/block}
       </section>
     {/block}
