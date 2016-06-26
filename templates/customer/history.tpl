@@ -23,31 +23,31 @@
       <tbody>
         {foreach from=$orders item=order}
           <tr>
-            <td>{$order.details.reference}</td>
-            <td>{$order.details.order_date}</td>
-            <td>{$order.totals.total.value}</td>
-            <td>{$order.details.payment}</td>
+            <td>{$order.reference}</td>
+            <td>{$order.order_date}</td>
+            <td>{$order.total_price}</td>
+            <td>{$order.payment}</td>
             <td>
               <span
-                class="order-status-label {$order.history.current.contrast}"
-                style="background-color:{$order.history.current.color}"
+                class="order-status-label {$order.contrast}"
+                style="background-color:{$order.order_state_color}"
               >
-                {$order.history.current.ostate_name}
+                {$order.order_state}
               </span>
             </td>
             <td>
-              {if $order.details.invoice_url}
-                <a href="{$order.details.invoice_url}" class="order-invoice-link">{l s='PDF'}</a>
+              {if $order.url_to_invoice}
+                <a href="{$order.url_to_invoice}" class="order-invoice-link">{l s='PDF'}</a>
               {else}
                 -
               {/if}
             </td>
             <td>
-              <a href="{$order.details.details_url}" data-link-action="view-order-details">
+              <a href="{$order.url_details}" data-link-action="view-order-details">
                 {l s='Details'}
               </a>
-              {if $order.details.reorder_url}
-                <a href="{$order.details.reorder_url}" class="order-reorder-link">{l s='Reorder'}</a>
+              {if $order.url_to_reorder}
+                <a href="{$order.url_to_reorder}" class="order-reorder-link">{l s='Reorder'}</a>
               {/if}
             </td>
           </tr>
