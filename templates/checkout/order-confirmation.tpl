@@ -13,11 +13,11 @@
     <h3>{l s='Your order is confirmed'}</h3>
     <p>
       {l s='An email has been sent to your mail address %s.' sprintf=$customer.email}
-      {if $order.details.invoice_url !== ''}{l s='You can also [1]download your invoice[/1]' tags=["<a href='{$order.details.invoice_url}'>"]}{/if}
-      {if $order.details.invoice_url}
+      {if $order.details.url_to_invoice !== ''}{l s='You can also [1]download your invoice[/1]' tags=["<a href='{$order.details.url_to_invoice}'>"]}{/if}
+      {if $order.details.url_to_invoice}
         {l
           s='You can also [1]download your invoice[/1]'
-          tags=["<a href='{$order.details.invoice_url}'>"]
+          tags=["<a href='{$order.details.url_to_invoice}'>"]
         }
       {/if}
     </p>
