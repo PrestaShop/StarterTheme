@@ -43,7 +43,9 @@
         <ul>
           <li>{l s='Order reference %s' sprintf=$order.details.reference}</li>
           <li>{l s='Payment method %s' sprintf=$order.details.payment}</li>
-          <li>{l s='Shipping method %s' sprintf=$order.carrier.name}</li>
+          {if !$order.details.is_virtual}
+            <li>{l s='Shipping method %s' sprintf=$order.carrier.name}</li>
+          {/if}
         </ul>
     </div>
 

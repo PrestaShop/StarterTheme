@@ -9,12 +9,16 @@
     >
 
     {if !$use_same_address}
-      <h2 class="h2">{l s='Delivery Address'}</h2>
+      <h2 class="h2">{l s='Shipping Address'}</h2>
     {/if}
 
-    {if $use_same_address}
+    {if $use_same_address && !$cart.is_virtual}
       <p>
         {l s='The selected address will be used both as your personal address (for invoice) and as your shipping address.'}
+      </p>
+    {elseif $use_same_address && $cart.is_virtual}
+      <p>
+        {l s='The selected address will be used as your personal address (for invoice).'}
       </p>
     {/if}
 
@@ -40,7 +44,7 @@
 
       <a href="{$new_address_delivery_url}">{l s='Add another address'}</a>
 
-      {if $use_same_address}
+      {if $use_same_address && !$cart.is_virtual}
         <p>
           <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
             {l s='Billing address differs from shipping address'}
