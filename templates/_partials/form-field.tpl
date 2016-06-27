@@ -46,13 +46,16 @@
     <span>{$field.label}</span>
   </label>
 {elseif $field.type === 'password'}
-  <input
-    name="{$field.name}"
-    type="password"
-    value=""
-    pattern=".{literal}{{/literal}5,{literal}}{/literal}"
-    {if $field.required}required{/if}
-  >
+  <label {if $field.required}class="required"{/if}>
+    <span>{$field.label}</span>
+    <input
+      name="{$field.name}"
+      type="password"
+      value=""
+      pattern=".{literal}{{/literal}5,{literal}}{/literal}"
+      {if $field.required}required{/if}
+    >
+  </label>
 {elseif $field.type === 'hidden'}
   <input type="hidden" name="{$field.name}" value="{$field.value}">
 {else}
