@@ -77,7 +77,7 @@
     </tr>
     <tr>
       <td>{$subtotals.tax.label}</td>
-      <td>{$subtotal.tax.value}</td>
+      <td>{$subtotals.tax.value}</td>
     </tr>
   </table>
 
