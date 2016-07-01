@@ -1,5 +1,5 @@
 <nav class="pagination">
-  {l s='Showing %s-%s of %s item(s)' sprintf=[$pagination.items_shown_from ,$pagination.items_shown_to, $pagination.total_items]}
+  {l s='Showing %from%-%to% of %total% item(s)' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $pagination.items_shown_to, '%total%' => $pagination.total_items] d='Shop.Theme.Catalog'}
   <ul>
     {foreach from=$pagination.pages item="page"}
       <li {if $page.current} class="current" {/if}>
@@ -12,9 +12,9 @@
             class="{['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}"
           >
             {if $page.type === 'previous'}
-              {l s='Previous'}
+              {l s='Previous' d='Shop.Theme.Actions'}
             {elseif $page.type === 'next'}
-              {l s='Next'}
+              {l s='Next' d='Shop.Theme.Actions'}
             {else}
               {$page.page}
             {/if}

@@ -2,7 +2,7 @@
   <label class='select-field {if $field.required}required{/if}'>
     <span>{$field.label}</span>
     <select name="{$field.name}" {if $field.required}required{/if}>
-      <option value disabled selected>{l s='-- please choose --'}</option>
+      <option value disabled selected>{l s='-- please choose --' d='Shop.Forms.Labels'}</option>
       {foreach from=$field.availableValues item="label" key="value"}
         <option value="{$value}" {if $value eq $field.value}selected{/if}>{$label}</option>
       {/foreach}

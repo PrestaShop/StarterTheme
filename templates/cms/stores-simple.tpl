@@ -1,7 +1,7 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='Our stores'}
+  {l s='Our stores' d='Shop.Theme'}
 {/block}
 
 {block name='page_content_container'}
@@ -20,16 +20,16 @@
           <ul>
             <li>{$store.address.formatted nofilter}</li>
             {if $store.phone}
-              <li>{l s='Phone:'} {$store.phone}</li>
+              <li>{l s='Phone:' d='Shop.Theme'} {$store.phone}</li>
             {/if}
             {if $store.fax}
-              <li>{l s='Fax:'} {$store.fax}</li>
+              <li>{l s='Fax:' d='Shop.Theme'} {$store.fax}</li>
             {/if}
             {if $store.email}
-              <li>{l s='Email:'} {$store.email}</li>
+              <li>{l s='Email:' d='Shop.Theme'} {$store.email}</li>
             {/if}
           </ul>
-          <p>{l s='Openning hours'}</p>
+          <p>{l s='Opening hours' d='Shop.Theme'}</p>
           <table>
             {foreach $store.business_hours as $day}
             <tr>

@@ -1,6 +1,6 @@
 <section id="products">
   {if $products|count}
-      <h1>{l s='Products'}</h1>
+      <h1>{l s='Products' d='Shop.Theme.Catalog'}</h1>
 
       {block name='sort_by'}
         {include file='catalog/_partials/sort-orders.tpl' sort_orders=$sort_orders}

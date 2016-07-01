@@ -1,5 +1,5 @@
 <div class="products-sort-order">
-  <span>{l s='Sort by:'}</span>
+  <span>{l s='Sort by:' d='Shop.Theme'}</span>
   {foreach from=$sort_orders item=sort_order}
     <a
       rel="nofollow"

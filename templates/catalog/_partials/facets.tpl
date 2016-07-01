@@ -44,7 +44,7 @@
           <form>
             <input type="hidden" name="order" value="{$sort_order}">
             <select name="q">
-              <option disabled selected hidden>{l s='(no filter)'}</option>
+              <option disabled selected hidden>{l s='(no filter)' d='Shop.Theme'}</option>
               {foreach from=$facet.filters item="filter"}
                 {if $filter.displayed}
                   <option
@@ -65,7 +65,7 @@
             </select>
             {if !$js_enabled}
               <button class="ps-hidden-by-js" type="submit">
-                {l s='Filter'}
+                {l s='Filter' d='Shop.Theme.Actions'}
               </button>
             {/if}
           </form>

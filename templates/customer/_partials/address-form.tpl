@@ -20,7 +20,7 @@
     <footer class="form-footer">
       <input type="hidden" name="submitAddress" value="1">
       {block name='form_buttons'}
-        <button type="submit">{l s='Save'}</button>
+        <button type="submit">{l s='Save' d='Shop.Theme.Actions'}</button>
       {/block}
     </footer>
   </form>

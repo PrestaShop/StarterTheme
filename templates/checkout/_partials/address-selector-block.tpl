@@ -13,11 +13,11 @@
       {if $interactive}
         <a  data-link-action="edit-address"
           href="{url entity='order' params=['id_address' => $address.id, 'editAddress' => $type, 'token' => $token]}">
-          {l s='Edit'}
+          {l s='Edit' d='Shop.Theme.Actions'}
         </a>
         <a  data-link-action="delete-address"
           href="{url entity='order' params=['id_address' => $address.id, 'deleteAddress' => true, 'token' => $token]}">
-          {l s='Delete'}
+          {l s='Delete' d='Shop.Theme.Actions'}
         </a>
       {/if}
     </footer>
@@ -25,6 +25,6 @@
 {/foreach}
 {if $interactive}
   <p>
-    <button class="ps-hidden-by-js" type="submit">{l s='Save'}</button>
+    <button class="ps-hidden-by-js" type="submit">{l s='Save' d='Shop.Theme.Actions'}</button>
   </p>
 {/if}
