@@ -58,8 +58,28 @@
       <h3>{l s='Reminder'}</h3>
       <ul>
         <li>{l s='All merchandise must be returned in its original packaging and in its original state.'}</li>
-        <li>{l s='Please print out the [1]PDF return slip[/1] and include it with your package.' tags=['<a href="'|cat:$orderRet.return_pdf_url|cat:'">']}</li>
-        <li>{l s='Please see the PDF return slip ([1]for the correct address[/1]).' tags=['<a href="'|cat:$orderRet.return_pdf_url|cat:'">']}</li>
+        <li>
+          {* [1][/1] is for a HTML tag. *}
+          {l
+            s='Please print out the [1]PDF return slip[/1] and include it with your package.'
+            d='Shop.Theme.CustomerAccount'
+            sprintf=[
+              '[1]' => '<a href="'|cat:$orderRet.return_pdf_url|cat:'">',
+              '[/1]' => '</a>'
+            ]
+          }
+        </li>
+        <li>
+          {* [1][/1] is for a HTML tag. *}
+          {l
+            s='Please see the PDF return slip ([1]for the correct address[/1]).'
+            d='Shop.Theme.CustomerAccount'
+            sprintf=[
+              '[1]' => '<a href="'|cat:$orderRet.return_pdf_url|cat:'">',
+              '[/1]' => '</a>'
+            ]
+          }
+        </li>
       </ul>
       {l s='When we receive your package, we will notify you by email. We will then begin processing order reimbursement.'}
       <br><br><a href="{$urls.pages.contact}">{l s='Please let us know if you have any questions.'}</a>

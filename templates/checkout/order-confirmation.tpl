@@ -13,11 +13,14 @@
     <h3>{l s='Your order is confirmed' d='Shop.Theme.Checkout'}</h3>
     <p>
       {l s='An email has been sent to your mail address %email%.' sprintf=['%email%' => $customer.email] d='Shop.Theme.Checkout'}
-      {if $order.details.invoice_url !== ''}{l s='You can also [1]download your invoice[/1]' tags=["<a href='{$order.details.invoice_url}'>"] d='Shop.Theme.Checkout'}{/if}
       {if $order.details.invoice_url}
+        {* [1][/1] is for a HTML tag. *}
         {l
           s='You can also [1]download your invoice[/1]'
-          tags=["<a href='{$order.details.invoice_url}'>"]
+          sprintf=[
+            '[1]' => "<a href='{$order.details.invoice_url}'>",
+            '[/1]' => "</a>"
+          ]
           d='Shop.Theme.Checkout'
         }
       {/if}
