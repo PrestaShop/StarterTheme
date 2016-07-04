@@ -10,11 +10,11 @@
     <div id="order-infos">
       <p>
         {l
-          s='Order Reference %s - placed on %s'
-          sprintf=[$order.details.reference, $order.details.order_date]
+          s='Order Reference %reference% - placed on %date%'
+          sprintf=['%reference%' => $order.details.reference, '%date%' => $order.details.order_date]
         }
       </p>
-      {if $order.details.reorder_url}}
+      {if $order.details.reorder_url}
         <a href="{$order.details.reorder_url}">{l s='Reorder'}</a>
       {/if}
 
@@ -67,7 +67,7 @@
     {if $order.addresses.delivery}
       <article id="delivery-address" class="address">
         <header>
-          <h1 class="h4">{l s='Delivery address %s' sprintf=$order.addresses.delivery.alias}</h1>
+          <h1 class="h4">{l s='Delivery address %alias%' d='Shop.Theme.Checkout' sprintf=['%alias%' => $order.addresses.delivery.alias]}</h1>
         </header>
 
         <p>{$order.addresses.delivery.formatted nofilter}</p>
@@ -76,7 +76,7 @@
 
     <article id="invoice-address" class="address">
       <header>
-        <h1 class="h4">{l s='Invoice address %s' sprintf=$order.addresses.invoice.alias}</h1>
+        <h1 class="h4">{l s='Invoice address %alias%' d='Shop.Theme.Checkout' sprintf=['%alias%' => $order.addresses.invoice.alias]}</h1>
       </header>
 
       <p>{$order.addresses.invoice.formatted nofilter}</p>

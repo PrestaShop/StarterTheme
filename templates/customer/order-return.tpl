@@ -8,10 +8,10 @@
 
   {block name='order_return_infos'}
     <div id="order-return-infos">
-      <h1>{l s='RE#%s on %s' sprintf=[$orderRet.return_number, $orderRet.return_date]}</h2>
+      <h1>{l s='RE#%number% on %date%' d='Shop.Theme.CustomerAccount' sprintf=['%number%' => $orderRet.return_number, '%date%' => $orderRet.return_date]}</h2>
       <p>{l s='We have logged your return request.'}</p>
-      <p>{l s='Your package must be returned to us within %s days of receiving your order.' sprintf=$nbdaysreturn}</p>
-      <p>{l s='The current status of your merchandise return is: %s' sprintf=$state_name}</p>
+      <p>{l s='Your package must be returned to us within %number% days of receiving your order.' d='Shop.Theme.CustomerAccount' sprintf=['%number%' => $nbdaysreturn]}</p</p>
+      <p>{l s='The current status of your merchandise return is: %state%' sprintf=['%state%' => $state_name]}</p>
       <p>{l s='List of items to be returned:'}</p>
     </div>
   {/block}
