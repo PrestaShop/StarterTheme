@@ -1,6 +1,6 @@
 <div id='order-items'>
 
-  <h3>{l s='Order items'}</h3>
+  <h3>{l s='Order items' d='Shop.Theme.Checkout'}</h3>
 
   <table>
     {foreach from=$products item=product}
@@ -28,7 +28,7 @@
                       <a href="{$customization.up_quantity_url}" data-link-action="update-quantity">+</a>
                     {/if}
                     <a href="{$customization.remove_from_cart_url}" class="remove-from-cart" rel="nofollow">
-                      {l s='Remove'}
+                      {l s='Remove' d='Shop.Theme.Actions'}
                     </a>
                     <ul>
                       {foreach from=$customization.fields item="field"}

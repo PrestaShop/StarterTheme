@@ -47,7 +47,7 @@
   data-id-product = "{$product.id_product|escape:'javascript'}"
   data-id-product-attribute = "{$product.id_product_attribute|escape:'javascript'}"
  >
-  {l s='Remove' mod="blockcart"}
+  {l s='Remove' d='Shop.Theme.Actions'}
 </a>
 
 {hook h='displayCartExtraProductActions' product=$product}

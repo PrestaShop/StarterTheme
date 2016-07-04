@@ -3,7 +3,7 @@
 {block "form_field"}
   {if $field.name === 'password' and $guest_allowed}
     <div>
-      <p>{l s='Choose a password to create an account and save time on your next order (optional)'}</p>
+      <p>{l s='Choose a password to create an account and save time on your next order (optional)' d='Shop.Theme.Checkout'}</p>
       {$smarty.block.parent}
     </div>
   {else}
@@ -19,6 +19,6 @@
     type="submit"
     value="1"
   >
-    {l s='Continue'}
+    {l s='Continue' d='Shop.Theme.Actions'}
   </button>
 {/block}

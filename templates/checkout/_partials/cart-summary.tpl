@@ -2,7 +2,7 @@
   {hook h='displayCheckoutSummaryTop'}
   {block name='cart_summary_header'}
     <header>
-      <h1 class="h3">{l s='Your order'}</h1>
+      <h1 class="h3">{l s='Your order' d='Shop.Theme.CustomerAccount'}</h1>
       <p>{$cart.summary_string}</p>
     </header>
   {/block}
