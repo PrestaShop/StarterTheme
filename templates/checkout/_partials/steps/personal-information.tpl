@@ -4,7 +4,17 @@
   {if $customer.is_logged && !$customer.is_guest}
 
     <p class="identity">{l s='Connected as %first_name% %last_name%.' sprintf=['%first_name%' => $customer.firstname, '%last_name%' => $customer.lastname] d='Shop.Theme.CustomerAccount'}</p>
-    <p>{l s='Not you? [1]Log out[/1]' tags=["<a href='{$urls.actions.logout}'>"] d='Shop.Theme.CustomerAccount'}</p>
+    <p>
+      {* [1][/1] is for a HTML tag. *}
+      {l
+        s='Not you? [1]Log out[/1]'
+        d='Shop.Theme.CustomerAccount'
+        sprintf=[
+          '[1]' => "<a href='{$urls.actions.logout}'>",
+          '[/1]' => "</a>"
+        ]
+      }
+    </p>
     <p><small>{l s='If you sign out now, your cart will be emptied.' d='Shop.Theme.Checkout'}</small></p>
 
   {elseif $show_login_form}
