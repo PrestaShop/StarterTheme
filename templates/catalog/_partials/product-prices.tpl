@@ -13,7 +13,7 @@
       <p class="product-price {if $product.has_discount}has-discount{/if}" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
         <link itemprop="availability" href="https://schema.org/InStock"/>
         <span itemprop="price" content="{$product.price_amount}">{$product.price}</span>
-        {if $feature_active.display_taxes_label}
+        {if $configuration.display_taxes_label}
          <small>{$product.labels.tax_short}</small>
         {/if}
         <meta itemprop="priceCurrency" content="{$currency.iso_code}">

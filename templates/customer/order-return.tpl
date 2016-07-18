@@ -1,7 +1,7 @@
 {extends file='customer/page.tpl'}
 
 {block name='page_title'}
-  {l s='Order details'}
+  {l s='Return details' d='Shop.Theme.CustomerAccount'}
 {/block}
 
 {block name='page_content'}
@@ -9,19 +9,30 @@
   {block name='order_return_infos'}
     <div id="order-return-infos">
       <h1>{l s='RE#%number% on %date%' d='Shop.Theme.CustomerAccount' sprintf=['%number%' => $orderRet.return_number, '%date%' => $orderRet.return_date]}</h2>
-      <p>{l s='We have logged your return request.'}</p>
+      <p>{l s='We have logged your return request.' d='Shop.Theme.CustomerAccount'}</p>
       <p>{l s='Your package must be returned to us within %number% days of receiving your order.' d='Shop.Theme.CustomerAccount' sprintf=['%number%' => $nbdaysreturn]}</p</p>
-      <p>{l s='The current status of your merchandise return is: %state%' sprintf=['%state%' => $state_name]}</p>
-      <p>{l s='List of items to be returned:'}</p>
+        <p>
+          {* [1][/1] is for a HTML tag. *}
+          {l
+            s='The current status of your merchandise return is: [1] %state% [/1]'
+            d='Shop.Theme.CustomerAccount'
+            sprintf=[
+              '[1]' => '<strong>',
+              '[/1]' => '</strong>',
+              '%state%' => $state_name
+            ]
+          }
+        </p>
+      <p>{l s='List of items to be returned:' d='Shop.Theme.CustomerAccount'}</p>
     </div>
   {/block}
 
   <table>
     <thead>
       <tr>
-        <th>{l s='Reference'}</th>
-        <th>{l s='Product'}</th>
-        <th>{l s='Quantity'}</th>
+        <th>{l s='Reference' d='Shop.Theme.Catalog'}</th>
+        <th>{l s='Product' d='Shop.Theme.Catalog'}</th>
+        <th>{l s='Quantity' d='Shop.Theme.Checkout'}</th>
       </tr>
     </thead>
     <tbody>
@@ -55,9 +66,9 @@
 
   {if $orderRet.state == 2}
     <section>
-      <h3>{l s='Reminder'}</h3>
+      <h3>{l s='Reminder' d='Shop.Theme.CustomerAccount'}</h3>
       <ul>
-        <li>{l s='All merchandise must be returned in its original packaging and in its original state.'}</li>
+        <li>{l s='All merchandise must be returned in its original packaging and in its original state.' d='Shop.Theme.CustomerAccount'}</li>
         <li>
           {* [1][/1] is for a HTML tag. *}
           {l
@@ -81,9 +92,9 @@
           }
         </li>
       </ul>
-      {l s='When we receive your package, we will notify you by email. We will then begin processing order reimbursement.'}
-      <br><br><a href="{$urls.pages.contact}">{l s='Please let us know if you have any questions.'}</a>
-      <p>{l s='If the conditions of return listed above are not respected, we reserve the right to refuse your package and/or reimbursement.'}</p>
+      {l s='When we receive your package, we will notify you by email. We will then begin processing order reimbursement.' d='Shop.Theme.CustomerAccount'}
+      <br><br><a href="{$urls.pages.contact}">{l s='Please let us know if you have any questions.' d='Shop.Theme.CustomerAccount'}</a>
+      <p>{l s='If the conditions of return listed above are not respected, we reserve the right to refuse your package and/or reimbursement.' d='Shop.Theme.CustomerAccount'}</p>
     </section>
   {/if}
 
