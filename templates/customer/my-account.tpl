@@ -32,13 +32,13 @@
         <a id="order-slips-link" href="{$urls.pages.order_slip}">{l s='Credit slips'}</a>
       </li>
 
-      {if $feature_active.voucher}
+      {if $configuration.voucher_enabled}
         <li>
           <a id="discounts-link" href="{$urls.pages.discount}">{l s='Vouchers'}</a>
         </li>
       {/if}
 
-      {if $feature_active.return}
+      {if $configuration.return_enabled}
         <li>
           <a id="returns-link" href="{$urls.pages.order_follow}">{l s='Merchandise returns'}</a>
         </li>
