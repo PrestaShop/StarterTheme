@@ -1,11 +1,11 @@
 # Theme configuration file
 
-In order to be enabled, a theme need to be configurated with a `theme.yml` file in `config` folder.
-It also need to have some files checked by the Theme Manager to validate the theme integrity.
+In order to be activated, this theme needs to be configured with a `theme.yml` file in `config/` folder.
+Several files will be checked by the **Theme Manager** to validate the theme's integrity.
  
-## Minimal requirement files
+## Mandatory Structure Requirements
 
-There are minimal files requirements, a theme won't be loaded if theses files don't exists:
+A theme most consist of the following file structure before it can be isntalled:
 
 | Localization        | Description           |
 |:--------------------|-----------------------| 
@@ -23,11 +23,9 @@ There are minimal files requirements, a theme won't be loaded if theses files do
 | templates/_partials | notifications.tpl     |
 | templates/_partials | footer.tpl            |
 
-> Theses templates are mandatory in order to display correctly your shop.
+## Mandatory Configuration File Contents
 
-## Minimal configuration file
-
-There are a list of properties required in the configuration file.
+This is a list of properties required in the configuration file.
 
 | Property                                     | Description                               |
 |:---------------------------------------------|-------------------------------------------| 
@@ -38,7 +36,7 @@ There are a list of properties required in the configuration file.
 | meta.compatibility.from                      | Theme minimal version of PrestaShop       |
 | meta.available_layouts                       | Theme available layouts                   |
 | global_settings.image_types.cart_default     | Define all available thumbnails           |
-| global_settings.image_types.small_default    | for cart, product                         |
+| global_settings.image_types.small_default    | For cart and product                      |
 | global_settings.image_types.medium_default   | home, category                            |
 | global_settings.image_types.large_default    | -                                         |
 | global_settings.image_types.home_default     | -                                         |
