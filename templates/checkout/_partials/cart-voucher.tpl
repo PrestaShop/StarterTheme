@@ -9,5 +9,8 @@
       <input type="text" name="discount_name" placeholder="{l s='Promo code' d='Shop.Theme.Checkout'}">
       <button type="submit"><span>{l s='ok' d='Shop.Theme.Actions'}</span></button>
     </form>
+    <div class="notification notification-error js-error">
+      <span class="js-error-text"></span>
+    </div>
   </div>
 {/if}
