@@ -30,9 +30,9 @@ global_settings:
         description: Add a widget area above the footer
     modules_to_hook:
       displayNav:
-        - blockcart
-        - blocklanguages
-        - blockcurrencies
+        - ps_shoppingcart
+        - ps_languageselector
+        - ps_currencyselector
         - ps_customersignin
       displayTop:
         - ps_mainmenu
