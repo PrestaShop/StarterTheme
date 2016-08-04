@@ -13,11 +13,17 @@ meta:
 
   available_layouts:
     layout-full-width:
-      name: Full width layout
-      description: Ideal for product pages to maximize picture size
+      name: Full Width
+      description: No side columns, ideal for distraction-free pages such as product pages.
+    layout-both-columns:
+      name: Three Columns
+      description: One large central column and 2 side columns.
     layout-left-side-column:
-      name: One small left column
-      description: Great for CMS pages to show advertisements on the side
+      name: Two Columns, small left column
+      description: Two columns with a small left column
+    layout-right-side-column:
+      name: Two Columns, small right column
+      description: Two columns with a small right column
 
 global_settings:
   configuration:
@@ -34,14 +40,11 @@ global_settings:
         - ps_languageselector
         - ps_currencyselector
         - ps_customersignin
-      displayTop:
-        - ps_mainmenu
       displayHome:
         - ps_imageslider
         - ps_featuredproducts
         - ps_banner
       displayFooter:
-        - ps_emailsubscription
         - ps_contactinfo
 
   image_types:
@@ -72,3 +75,7 @@ global_settings:
 
 theme_settings:
   default_layout: layout-full-width
+
+  layouts:
+    category: layout-left-side-column
+    best-sales: layout-left-side-column
