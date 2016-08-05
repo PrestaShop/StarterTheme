@@ -1,4 +1,5 @@
 {if $field.type === 'select'}
+
   <label class='select-field {if $field.required}required{/if}'>
     <span>{$field.label}</span>
     <select name="{$field.name}" {if $field.required}required{/if}>
@@ -8,7 +9,9 @@
       {/foreach}
     </select>
   </label>
+
 {elseif $field.type === 'countrySelect'}
+
   <label class='select-field {if $field.required}required{/if}'>
     <span>{$field.label}</span>
     <select class="js-country" name="{$field.name}" {if $field.required}required{/if}>
@@ -18,7 +21,9 @@
       {/foreach}
     </select>
   </label>
+
 {else if $field.type === 'radio-buttons'}
+
   <label class='radio-field {if $field.required}required{/if}'>
     <span>{$field.label}</span>
     {foreach from=$field.availableValues item="label" key="value"}
@@ -34,7 +39,9 @@
       </label>
     {/foreach}
   </label>
+
 {elseif $field.type === 'checkbox'}
+
   <label class='checkbox-field {if $field.required}required{/if}'>
     <input
       name="{$field.name}"
@@ -45,7 +52,9 @@
     >
     <span>{$field.label}</span>
   </label>
+
 {elseif $field.type === 'password'}
+
   <label {if $field.required}class="required"{/if}>
     <span>{$field.label}</span>
     <input
@@ -56,13 +65,18 @@
       {if $field.required}required{/if}
     >
   </label>
+
 {elseif $field.type === 'hidden'}
+
   <input type="hidden" name="{$field.name}" value="{$field.value}">
+
 {else}
+
   <label {if $field.required}class="required"{/if}>
     <span>{$field.label}</span>
     <input name="{$field.name}" type="{$field.type}" value="{$field.value}" {if $field.required}required{/if}>
   </label>
+
 {/if}
 
 {include file='_partials/form-errors.tpl' errors=$field.errors}
