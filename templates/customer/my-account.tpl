@@ -1,7 +1,7 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='My account'}
+  {l s='Your account'}
 {/block}
 
 {block name='page_content_container'}
