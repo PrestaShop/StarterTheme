@@ -26,9 +26,9 @@ plugins.push(
 
 module.exports = {
   entry: [
-    './css/_normalize.css',
+    './css/normalize.css',
     './css/example.less',
-    './css/dev.styl',
+    './css/st/dev.styl',
     './css/theme',
     './js/theme.js'
   ],
