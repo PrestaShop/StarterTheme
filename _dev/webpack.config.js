@@ -12,12 +12,9 @@ plugins.push(
   )
 );
 
-module.exports = {
+module.exports = [{
+  // JavaScript
   entry: [
-    './css/normalize.css',
-    './css/example.less',
-    './css/st/dev.styl',
-    './css/theme',
     './js/theme.js'
   ],
   output: {
@@ -29,7 +26,29 @@ module.exports = {
       test: /\.js$/,
       exclude: /node_modules/,
       loaders: ['babel-loader']
-    }, {
+    }]
+  },
+  externals: {
+    prestashop: 'prestashop'
+  },
+  plugins: plugins,
+  resolve: {
+    extensions: ['', '.js']
+  }
+}, {
+  // CSS
+  entry: [
+    './css/normalize.css',
+    './css/example.less',
+    './css/st/dev.styl',
+    './css/theme.scss'
+  ],
+  output: {
+    path: '../assets/js',
+    filename: 'theme.js'
+  },
+  module: {
+    loaders: [{
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
         "style",
@@ -58,11 +77,8 @@ module.exports = {
       loader: 'file-loader?name=../css/[hash].[ext]'
     }]
   },
-  externals: {
-    prestashop: 'prestashop'
-  },
   plugins: plugins,
   resolve: {
-    extensions: ['', '.js', '.scss', '.styl', '.less', '.css']
+    extensions: ['', '.scss', '.styl', '.less', '.css']
   }
-};
+}];
