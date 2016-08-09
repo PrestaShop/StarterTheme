@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --progress --colors --debug --display-chunks",
-    "watch": "webpack --progress --colors --debug --display-chunks --watch"
+    "build": "webpack --progress -p",
+    "watch": "webpack --progress --colors --watch",
+    "debug": "webpack --progress --colors --debug --devtool source-map --output-pathinfo --display-chunks --watch"
   },
   "author": "",
   "license": "ISC",

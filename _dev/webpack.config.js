@@ -4,18 +4,6 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var plugins = [];
 
-var production = false;
-
-if (production) {
-  plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-  );
-}
-
 plugins.push(
   new ExtractTextPlugin(
     path.join(
@@ -36,7 +24,6 @@ module.exports = {
     path: '../assets/js',
     filename: 'theme.js'
   },
-  devtool: 'source-map',
   module: {
     loaders: [{
       test: /\.js$/,
