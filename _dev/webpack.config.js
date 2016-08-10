@@ -1,15 +1,10 @@
 var webpack = require('webpack');
-var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var plugins = [];
 
 plugins.push(
-  new ExtractTextPlugin(
-    path.join(
-      '..', 'css', 'theme.css'
-    )
-  )
+  new ExtractTextPlugin('../css/theme.css')
 );
 
 module.exports = [{
