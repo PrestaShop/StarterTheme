@@ -1,16 +1,13 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='Guest Tracking'}
+  {l s='Guest Order Tracking'}
 {/block}
 
 {block name='page_content'}
-  {if isset($show_login_link) && $show_login_link}
-    <p><a href="{$urls.pages.my_account}">{l s='Click here to log in to your customer account.'}</a></p>
-  {/if}
-  <form action="{$urls.pages.guest_tracking}" method="post">
+  <form id="guestOrderTrackingForm" action="{$urls.pages.guest_tracking}" method="get">
     <header>
-      <h1 class="h3">{l s='To track your order, please enter the following information:'}</h1>
+      <p>{l s='To track your order, please enter the following information:'}</p>
     </header>
 
     <section class="form-fields">

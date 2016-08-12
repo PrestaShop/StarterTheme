@@ -20,7 +20,9 @@
       {/if}
     {/block}
 
-    <button class="add-to-cart" type="submit" name="add" data-button-action="add-to-cart">{l s='Add to cart' d='Shop.Theme.Actions'}</button>
+    <button class="add-to-cart" type="submit" name="add" data-button-action="add-to-cart">
+      {l s='Add to cart' d='Shop.Theme.Actions'}
+    </button>
 
     {hook h='displayProductButtons' product=$product}
   {/if}

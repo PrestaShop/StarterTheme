@@ -1,7 +1,10 @@
 {if $cart.vouchers.allowed}
   <div class="cart-voucher">
     {foreach from=$cart.vouchers.added item=voucher}
-      <li>{$voucher.name} <a href="{$voucher.delete_url}" data-link-action="remove-voucher">{l s='Remove' d='Shop.Theme.Actions'}</a></li>
+      <li>
+        {$voucher.name}
+        <a href="{$voucher.delete_url}" data-link-action="remove-voucher">{l s='Remove' d='Shop.Theme.Actions'}</a>
+      </li>
     {/foreach}
     <form action="{$urls.pages.cart}" data-link-action="add-voucher" method="post">
       <input type="hidden" name="token" value="{$static_token}">

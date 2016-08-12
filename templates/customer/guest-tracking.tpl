@@ -17,9 +17,9 @@
       <header>
         <h1 class="h3">{l s='Transform your guest account into a customer account and enjoy:'}</h1>
         <ul>
-          <li> -{l s='Personalized and secure access'}</li>
-          <li> -{l s='Fast and easy checkout'}</li>
-          <li> -{l s='Easier merchandise return'}</li>
+          <li>{l s='Personalized and secure access'}</li>
+          <li>{l s='Fast and easy checkout'}</li>
+          <li>{l s='Easier merchandise return'}</li>
         </ul>
       </header>
 
@@ -34,12 +34,13 @@
 
       <footer class="form-footer">
         <input type="hidden" name="submitTransformGuestToCustomer" value="1">
-        <input type="hidden" name="id_order" value="{$order.data.id}">
-        <input type="hidden" name="order_reference" value="{$order.data.reference}">
-        <input type="hidden" name="email" value="{$order.customer.email}">
+        <input type="hidden" name="id_order" value="{$order.details.id}">
+        <input type="hidden" name="order_reference" value="{$order.details.reference}">
+        <input type="hidden" name="email" value="{$guest_email}">
 
         <button type="submit">{l s='Send'}</button>
       </footer>
 
+    </form>
   {/block}
 {/block}

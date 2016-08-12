@@ -13,7 +13,7 @@
         <span class="label">{$field.label}:</span>
         <span class="value">
           {if $field.type == 'text'}
-            {if (int)$field.id_module}
+            {if $field.id_module}
               {$field.text nofilter}
             {else}
              {$field.text}
@@ -26,6 +26,7 @@
     {/foreach}
   {/foreach}
 {/if}
+
 <span class="product-availability">{$product.availability}</span>
 <span class="product-price">{$product.price}</span>
 {if $product.unit_price_full}
@@ -40,12 +41,12 @@
   <a href="{$product.up_quantity_url}" data-link-action="update-quantity">+</a>
 {/if}
 <a
-  class = "remove-from-cart"
-  rel = "nofollow"
-  href = "{$product.remove_from_cart_url}"
-  data-link-action = "remove-from-cart"
-  data-id-product = "{$product.id_product|escape:'javascript'}"
-  data-id-product-attribute = "{$product.id_product_attribute|escape:'javascript'}"
+  class="remove-from-cart"
+  data-link-action="remove-from-cart"
+  data-id-product="{$product.id_product|escape:'javascript'}"
+  data-id-product-attribute="{$product.id_product_attribute|escape:'javascript'}"
+  href="{$product.remove_from_cart_url}"
+  rel="nofollow"
  >
   {l s='Remove' d='Shop.Theme.Actions'}
 </a>
