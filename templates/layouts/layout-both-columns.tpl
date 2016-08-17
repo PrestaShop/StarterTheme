@@ -53,10 +53,6 @@
       {/block}
     </footer>
 
-    <!-- Load JS files here -->
-    {*StarterTheme: This is useful for module debugging, but should be removed before end release.*}
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
-
   </body>
 
 </html>
