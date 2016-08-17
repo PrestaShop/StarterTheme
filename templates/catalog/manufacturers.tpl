@@ -1,20 +1,6 @@
-{extends file=$layout}
-
-{block name='content'}
-  <section id="main">
-
-    {block name='manufacturer_header'}
-      <h1>{l s='Brands' d='Shop.Theme.Catalog'}</h1>
-    {/block}
-
-    {block name='manufacturer_miniature'}
-      <ul>
-        {foreach from=$manufacturers item=manufacturer}
-          {include file='catalog/_partials/miniatures/manufacturer.tpl' brand=$manufacturer}
-        {/foreach}
-      </ul>
-    {/block}
-
-  </section>
-
-{/block}
+{*
+ * If you want to modify the manufacturer page, you can extends brands and override some blocks,
+ * or redefine everything if you want to.
+ * If you want the page to look the same as brands, just remove this file.
+ *}
+{extends file='catalog/brands.tpl'}
