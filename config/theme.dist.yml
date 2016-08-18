@@ -40,6 +40,8 @@ global_settings:
         - ps_languageselector
         - ps_currencyselector
         - ps_customersignin
+      displayTop:
+        - ps_mainmenu
       displayHome:
         - ps_imageslider
         - ps_featuredproducts
