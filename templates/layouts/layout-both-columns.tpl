@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{$language.iso_code}">
+<html lang="{$language.locale}">
 
   <head>
     {block name='head'}
