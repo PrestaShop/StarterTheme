@@ -15,7 +15,7 @@
       </div>
 
       {block name='pagination'}
-        {include file='catalog/_partials/pagination.tpl' pagination=$listing.pagination}
+        {include file='_partials/pagination.tpl' pagination=$listing.pagination}
       {/block}
   {/if}
 </section>
