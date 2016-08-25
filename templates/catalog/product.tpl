@@ -107,18 +107,6 @@
                 {hook h='actionProductOutOfStock' product=$product}
               </div>
             {/block}
-
-            {block name='product_extra_right'}
-              <div class="product-extra-right">
-                {hook h='displayRightColumnProduct'}
-              </div>
-            {/block}
-
-            {block name='product_extra_left'}
-              <div class="product-extra-left">
-                {hook h='displayLeftColumnProduct'}
-              </div>
-            {/block}
           </div>
 
           <div class="product-actions">

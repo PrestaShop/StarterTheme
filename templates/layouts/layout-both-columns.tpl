@@ -27,13 +27,21 @@
 
       {block name='left_column'}
         <div id="left-column">
-          {hook h='displayLeftColumn'}
+          {if $page.page_name == 'product'}
+            {hook h='displayLeftColumnProduct'}
+          {else}
+            {hook h="displayLeftColumn"}
+          {/if}
         </div>
       {/block}
 
       {block name='right_column'}
         <div id="right-column">
-          {hook h='displayRightColumn'}
+          {if $page.page_name == 'product'}
+            {hook h='displayRightColumnProduct'}
+          {else}
+            {hook h="displayRightColumn"}
+          {/if}
         </div>
       {/block}
 
