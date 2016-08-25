@@ -5,9 +5,11 @@
 {/block}
 
 {block name='page_content_container' prepend}
+  {if ! empty($HOOK_PAYMENT_RETURN)}
   <section id="content-hook_payment_return">
     {$HOOK_PAYMENT_RETURN nofilter}
   </section>
+  {/if}
 
   <section id="content-hook_order_confirmation">
     <h3>{l s='Your order is confirmed' d='Shop.Theme.Checkout'}</h3>
