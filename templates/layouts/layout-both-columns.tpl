@@ -9,6 +9,8 @@
 
   <body id="{$page.page_name}" class="{$page.body_classes|classnames}">
 
+    {hook h='displayAfterBodyOpeningTag'}
+
     <header id="header">
       {block name='header'}
         {include file='_partials/header.tpl'}
@@ -60,6 +62,8 @@
         {include file='_partials/footer.tpl'}
       {/block}
     </footer>
+
+    {hook h='displayBeforeBodyClosingTag'}
 
   </body>
 
