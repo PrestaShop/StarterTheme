@@ -96,7 +96,7 @@
         {l s='Order with an obligation to pay' d='Shop.Theme.Actions'}
       </button>
       {if $show_final_summary}
-        <article class="notification notification-danger s-alert-payment-condtions" role="alert" data-alert="danger">
+        <article class="notification notification-danger js-alert-payment-conditions" role="alert" data-alert="danger">
           {l
             s='Please make sure you\'ve chosen a [1]payment method[/1] and accepted the [2]terms and conditions[/2].'
             sprintf=[

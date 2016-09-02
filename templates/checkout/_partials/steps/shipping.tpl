@@ -8,7 +8,7 @@
   <div class="delivery-options-list">
     {if $delivery_options|count}
       <form
-        id="delivery-method"
+        id="js-delivery"
         data-url-update="{url entity='order' params=['ajax' => 1, 'action' => 'selectDeliveryOption']}"
         method="post"
       >

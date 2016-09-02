@@ -1,4 +1,4 @@
-<section id="checkout-cart-summary" class="-js-cart" data-refresh-url="{$urls.pages.cart}?ajax=1">
+<section id="checkout-cart-summary" class="-js-cart js-checkout-summary" data-refresh-url="{$urls.pages.cart}?ajax=1">
   {hook h='displayCheckoutSummaryTop'}
   {block name='cart_summary_header'}
     <header>
