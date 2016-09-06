@@ -34,11 +34,11 @@
 {/if}
 
 {if $product.down_quantity_url}
-  <a href="{$product.down_quantity_url}" data-link-action="update-quantity">-</a>
+  <a href="{$product.down_quantity_url}" class="js-decrease-product-quantity" data-link-action="update-quantity">-</a>
 {/if}
 <span class="product-quantity">{$product.quantity}</span>
 {if $product.up_quantity_url}
-  <a href="{$product.up_quantity_url}" data-link-action="update-quantity">+</a>
+  <a href="{$product.up_quantity_url}" class="js-increase-product-quantity" data-link-action="update-quantity">+</a>
 {/if}
 <a
   class="remove-from-cart"
