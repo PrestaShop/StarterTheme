@@ -51,13 +51,10 @@
     {foreach from=$products item=product}
       <tr>
         <td>{$product.product_reference}</td>
-        <td>{$product.product_name}</td>
-        <td>{$product.product_quantity}</td>
-      </tr>
-      {if $product.customizations}
-        {foreach $product.customizations  as $customization}
-          <tr>
-            <td colspan="2">
+        <td>{$product.product_name}
+          {if $product.customizations}
+            <br />
+            {foreach $product.customizations as $customization}
               <ul>
                 {foreach from=$customization.fields item=field}
                   {if $field.type == 'image'}
@@ -67,11 +64,20 @@
                   {/if}
                 {/foreach}
               </ul>
-            </td>
-            <td>{$customization.quantity}</td>
-          </tr>
-        {/foreach}
-      {/if}
+            {/foreach}
+          {/if}
+        </td>
+        <td>
+          {if $product.customizations}
+            {$product.product_quantity}
+          {else}
+            {foreach $product.customizations as $customization}
+              {$customization.quantity}
+            {/foreach}
+          {/if}
+        </td>
+      </tr>
+
     {/foreach}
     </tbody>
   </table>
