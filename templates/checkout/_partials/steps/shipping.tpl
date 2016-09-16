@@ -25,6 +25,7 @@
                       <img src="{$carrier.logo}" alt="{$carrier.name}">
                     {/if}
                   </label>
+                  {$carrier.extraContent nofilter}
                 </div>
               </div>
             {/foreach}
