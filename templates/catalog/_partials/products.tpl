@@ -17,5 +17,7 @@
       {block name='pagination'}
         {include file='_partials/pagination.tpl' pagination=$listing.pagination}
       {/block}
+  {else}
+    {include file='errors/not-found.tpl'}
   {/if}
 </section>
