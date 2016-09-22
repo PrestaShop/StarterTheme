@@ -27,6 +27,7 @@
                     {/if}
 
                     <a
+                      rel="nofollow"
                       href="{$filter.nextEncodedFacetsURL}"
                       class="js-search-link {if $filter.active} active {/if}"
                     >
