@@ -26,7 +26,7 @@
       <p>
         {* [1][/1] is for a HTML tag. *}
         {l
-          s='The current status of your merchandise return is: [1] %state% [/1]'
+          s='The current status of your merchandise return is: [1] %status% [/1]'
           d='Shop.Theme.CustomerAccount'
           sprintf=[
             '[1]' => '<strong>',

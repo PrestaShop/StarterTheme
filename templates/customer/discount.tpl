@@ -1,7 +1,7 @@
 {extends file='customer/page.tpl'}
 
 {block name='page_title'}
-  {l s='My vouchers'}
+  {l s='Your vouchers'}
 {/block}
 
 {block name='page_content'}
