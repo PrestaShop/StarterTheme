@@ -1,7 +1,7 @@
 # This file is a used by travis install with specific setting.
 parameters:
     database_host:     mysql
-    database_port:     ~
+    database_port:     3306
     database_name:     prestashop
     database_user:     root
     database_password: admin
