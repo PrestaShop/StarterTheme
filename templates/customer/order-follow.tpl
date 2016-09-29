@@ -15,7 +15,7 @@
           <th>{l s='Order'}</th>
           <th>{l s='Package status'}</th>
           <th>{l s='Date issued'}</th>
-          <th>{l s='Return slip'}</th>
+          <th>{l s='Returns form'}</th>
         </tr>
       </thead>
       <tbody>

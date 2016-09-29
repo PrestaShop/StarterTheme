@@ -95,7 +95,7 @@
         <li>
           {* [1][/1] is for a HTML tag. *}
           {l
-            s='Please print out the [1]PDF return slip[/1] and include it with your package.'
+            s='Please print out the [1]returns form[/1] and include it with your package.'
             d='Shop.Theme.CustomerAccount'
             sprintf=[
               '[1]' => '<a href="'|cat:$return.print_url|cat:'">',
@@ -106,7 +106,7 @@
         <li>
           {* [1][/1] is for a HTML tag. *}
           {l
-            s='Please see the PDF return slip ([1]for the correct address[/1]).'
+            s='Please check the [1]returns form[/1] for the correct address.'
             d='Shop.Theme.CustomerAccount'
             sprintf=[
               '[1]' => '<a href="'|cat:$return.print_url|cat:'">',
