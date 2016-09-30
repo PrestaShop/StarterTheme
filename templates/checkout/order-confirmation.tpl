@@ -47,7 +47,7 @@
     <div id='order-details'>
         <h3>{l s='Order details' d='Shop.Theme.Checkout'}</h3>
         <ul>
-          <li>{l s='Order reference %reference%' sprintf=['%reference' => $order.details.reference] d='Shop.Theme.Checkout'}</li>
+          <li>{l s='Order reference %reference%' sprintf=['%reference%' => $order.details.reference] d='Shop.Theme.Checkout'}</li>
           <li>{l s='Payment method %method_name%' sprintf=['%method_name%' => $order.details.payment] d='Shop.Theme.Checkout'}</li>
           {if !$order.details.is_virtual}
             <li>{l s='Shipping method %method_name%' sprintf=['%method_name%' => $order.carrier.name] d='Shop.Theme.Checkout'}</li>
