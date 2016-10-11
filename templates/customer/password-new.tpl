@@ -6,7 +6,7 @@
 
 {block name='page_content_container'}
   <section class="password-form">
-    <form action="{$urls.pages.password}" method="post">
+    <form id="password-form" action="{$urls.pages.password}" method="post">
 
       <section class="form-fields">
 
