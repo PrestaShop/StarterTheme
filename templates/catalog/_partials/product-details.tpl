@@ -1,13 +1,13 @@
 <div id="product-details">
   {block name='product_reference'}
     {if isset($product_manufacturer->id)}
-      <div class="product-manufacturer">
+      <div>
         {if isset($manufacturer_image_url)}
           <a href="{$product_brand_url}">
-            <img src="{$manufacturer_image_url}" class="imgm img-thumbnail" />
+            <img src="{$manufacturer_image_url}" />
           </a>
         {else}
-          <label class="label">{l s='Brand' d='Shop.Theme.Catalog'}</label>
+          <label>{l s='Brand' d='Shop.Theme.Catalog'}</label>
           <span>
             <a href="{$product_brand_url}">{$product_manufacturer->name}</a>
           </span>
