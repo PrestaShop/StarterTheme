@@ -1,4 +1,4 @@
-<div id="product-details">
+<div id="product-details" data-product="{$product|json_encode}">
   {block name='product_reference'}
     {if isset($product_manufacturer->id)}
       <div>
