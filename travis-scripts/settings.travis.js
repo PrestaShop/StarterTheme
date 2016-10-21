@@ -1,3 +1,4 @@
 module.exports = {
-  baseUrl: 'http://localhost'
+  baseUrl: 'http://localhost',
+  browserName: 'firefox'
 };
