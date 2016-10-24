@@ -20,5 +20,7 @@
   <div class="header-top">
     {hook h='displayTop'}
   </div>
+
   {hook h='displayNavFullWidth'}
+
 {/block}
