@@ -209,6 +209,11 @@
               </section>
             {/if}
           {/block}
+          {foreach from=$product.extraContent item=extra key=extraKey}
+            <div class="{$extra.attr}" id="extra-{$extraKey}">
+              {$extra.content nofilter}
+            </div>
+          {/foreach}
         {/block}
       </section>
     {/block}
