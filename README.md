@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/PrestaShop/StarterTheme.svg?branch=master)](https://travis-ci.org/PrestaShop/StarterTheme)
 
-[Starter Theme](http://build.prestashop.com/tag/starter-theme/) is a tool for designer to work efficiently,
+[Starter Theme](http://build.prestashop.com/news/starter-theme-kickoff/) is a tool for designer to work efficiently,
 it includes only what is mandatory:
 * a list of templates
 * a configuration file
@@ -41,7 +41,7 @@ meta:
       to: ~
 ```
 
-See [theme.yml description](https://github.com/PrestaShop/StarterTheme/blob/master/config/theme.md)
+See [theme.yml description](https://github.com/PrestaShop/StarterTheme/blob/master/doc/theme.yml.md)
 
 **NOTE:** Please note that `/config/theme.yml` is ignored by git (see [.gitignore](https://github.com/PrestaShop/StarterTheme/blob/master/.gitignore))
 
