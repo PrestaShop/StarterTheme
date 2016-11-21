@@ -1,5 +1,5 @@
 <div class="products-sort-order">
-  <span>{l s='Sort by:' d='Shop.Theme'}</span>
+  <span>{if $listing.sort_selected}{$listing.sort_selected}{else}{l s='Sort by:' d='Shop.Theme'}{/if}</span>
   {foreach from=$sort_orders item=sort_order}
     <a
       class="{['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
