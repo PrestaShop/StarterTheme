@@ -40,7 +40,7 @@
           {/if}
           {if $gift.allowed}
             <label>
-              <input type="checkbox" name="gift" value="1" {if $gift.isGift} checked {/if}>
+              <input class="js-gift-checkbox" type="checkbox" name="gift" value="1" {if $gift.isGift} checked {/if}>
               <span>{$gift.label}</span>
             </label>
             <label for="gift_message">{l s='If you\'d like, you can add a note to the gift:'}</label>
