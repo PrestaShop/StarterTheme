@@ -1,8 +1,8 @@
 <div id="js-product-list-top" class="products-selection">
-  {if $listing.products|count > 1}
-    <p>{l s='There are %product_count% products.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.products|count]}</p>
+  {if $listing.pagination.total_items|count > 1}
+    <p>{l s='There are %product_count% products.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.pagination.total_items|count]}</p>
   {else}
-    <p>{l s='There is %product_count% product.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.products|count]}</p>
+    <p>{l s='There is %product_count% product.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.pagination.total_items|count]}</p>
   {/if}
 
   {block name='sort_by'}
