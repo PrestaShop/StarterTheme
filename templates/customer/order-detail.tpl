@@ -84,7 +84,7 @@
     </article>
   {/block}
 
-  {$HOOK_DISPLAYORDERDETAIL}
+  {$HOOK_DISPLAYORDERDETAIL nofilter}
 
   {block name='order_detail'}
     {if $order.details.is_returnable}
