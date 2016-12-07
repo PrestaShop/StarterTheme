@@ -36,8 +36,17 @@
 
         {block name='cart_actions'}
           <div>
-            <a href="{$urls.pages.order}">{l s='Checkout'}</a>
-            {hook h='displayExpressCheckout'}
+            {if $cart.minimalPurchaseRequired}
+              <div class="notification notification-warning" role="alert" data-alert="warning">
+                {$cart.minimalPurchaseRequired}
+              </div>
+              <button disabled>{l s='Checkout' d='Shop.Theme.Actions'}</button>
+            {elseif empty($cart.products)}
+              <button disabled>{l s='Checkout' d='Shop.Theme.Actions'}</button>
+            {else}
+              <a href="{$urls.pages.order}">{l s='Checkout' d='Shop.Theme.Actions'}</a>
+              {hook h='displayExpressCheckout'}
+            {/if}
           </div>
         {/block}
 
