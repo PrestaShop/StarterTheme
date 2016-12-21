@@ -9,27 +9,14 @@ addons:
         - postfix
         - libappindicator1
         - fonts-liberation
-    sauce_connect: true
-
-cache:
-  directories:
-    - $HOME/.npm
 
 sudo: required
 dist: trusty
-group: edge
 
 env:
   - PHP_VERSION=5.4
   - PHP_VERSION=5.6
   - PHP_VERSION=7
-
-matrix:
-  fast_finish: true
-
-before_install:
-  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  - sudo dpkg -i google-chrome*.deb
 
 before_script:
   - docker run --name mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql:5.6
@@ -44,7 +31,7 @@ before_script:
   - docker cp prestashop:/var/www/html/tests/Selenium selenium
   - cp travis-scripts/settings.travis.js selenium/settings.js
   - export PATH=$PATH:/usr/lib/jvm/java-8-oracle/jre/bin
-  - cd selenium && npm install
+  - cd selenium && npm install --silent
   - docker exec prestashop php tests/Selenium/prepare-shop.php
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_10.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :10 -ac -screen 0 1600x1200x16
   - DISPLAY=:10 node_modules/.bin/selenium-standalone start &> /tmp/selenium.log &
@@ -62,5 +49,3 @@ after_script:
   - docker logs prestashop
   - google-chrome --version
   - cat /tmp/selenium.log
-
-after_failure:
