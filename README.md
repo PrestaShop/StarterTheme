@@ -115,16 +115,18 @@ Themes architecture has changed a lot since PrestaShop 1.7.
 | `templates` | Contains the templates of the theme, ordered by domain categories |
 | `preview.png` | Should be a thumbnail of your theme homepage, displayed in the back office |
 
+## Update Workflow
+
+### Understanding the branches
+
+The StarterTheme's branches follow the PrestaShop's branches. That means that if you want to create a theme for PrestaShop `1.7.0.x` version, choose the latest release for this minor version (or use the `1.7.0.x` branches).
+
+### Update
+
+Every Prestashop release will be attached to a PrestaShop version and we will provide explicit changelogs with new features, fixes and impacted files to help you keep your theme up to date with the lastest improvements.
+
+Since your theme will live its own life, you cannot just cherry-pick a commit. You will have to understand it and decide if that applies to your theme or not.
+
 ## Contributing
 
 Take a look at our [Contributing guide](CONTRIBUTING.md)
-
-## Update workflow
-
-You may wonder how to access the latest features from this theme when you already have used and modified it.
-
-You may apply a patch with the commits but most of the time, you will have to deal with conflicts because you
-will have updated `assets` and `templates`.
-
-We will provide explicit changelogs with new features, fixes and impacted files to help you keep your [fork up to date](https://help.github.com/articles/syncing-a-fork/)
-with the lastest improvements.
