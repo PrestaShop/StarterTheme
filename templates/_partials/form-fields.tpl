@@ -22,7 +22,7 @@
     </select>
   </label>
 
-{else if $field.type === 'radio-buttons'}
+{elseif $field.type === 'radio-buttons'}
 
   <label class='radio-field {if $field.required}required{/if}'>
     <span>{$field.label}</span>
