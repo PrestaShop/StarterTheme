@@ -33,6 +33,9 @@
       {hook h='displayProductListFunctionalButtons' product=$product}
     </div>
   {/block}
+  
+  {block name='quick_view'}
+  {/block}
 
   {block name='product_variants'}
     {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
