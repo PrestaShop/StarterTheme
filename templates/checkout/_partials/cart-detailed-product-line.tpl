@@ -29,9 +29,28 @@
 
 <span class="product-availability">{$product.availability}</span>
 <span class="product-price">{$product.price}</span>
-{if $product.unit_price_full}
-  <small class="sub">{$product.unit_price_full}</small>
-{/if}
+<div class="product-price {if $product.has_discount}has-discount{/if}">
+  {if $product.has_discount}
+    <div class="product-discount">
+      <span class="regular-price">{$product.regular_price}</span>
+      {if $product.discount_type === 'percentage'}
+        <span class="discount-percentage">
+          -{$product.discount_percentage_absolute}
+        </span>
+      {else}
+        <span class="discount-amount">
+          -{$product.discount_to_display}
+        </span>
+      {/if}
+    </div>
+  {/if}
+  <div>
+    <span class="current-price">{$product.price}</span>
+    {if $product.unit_price_full}
+      <div class="sub">{$product.unit_price_full}</div>
+    {/if}
+  </div>
+</div>
 
 {if $product.down_quantity_url}
   <a href="{$product.down_quantity_url}" class="js-decrease-product-quantity" data-link-action="update-quantity">-</a>
