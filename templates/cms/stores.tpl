@@ -15,7 +15,7 @@
 
         <div>
           <div class="store-picture">
-            <img src="" alt="">
+            <img src="{$store.image.bySize.stores_default.url}" alt="{$store.image.legend}">
           </div>
           <ul>
             <li>{$store.address.formatted nofilter}</li>
