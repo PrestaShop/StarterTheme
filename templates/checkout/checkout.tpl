@@ -20,17 +20,17 @@
     {/block}
 
     {block name='content'}
-    <section id="content">
+      <section id="content">
 
-      {include  file          = 'checkout/_partials/cart-summary.tpl'
-                cart          = $cart
-      }
+        {block name='cart_summary'}
+          {include file='checkout/_partials/cart-summary.tpl' cart=$cart}
+        {/block}
 
-      {render   file  = 'checkout/checkout-process.tpl'
-                ui    = $checkout_process
-      }
+        {block name='cart_summary'}
+          {render file='checkout/checkout-process.tpl' ui=$checkout_process}
+        {/block}
 
-    </section>
+      </section>
     {/block}
 
     <footer id="footer">
