@@ -129,6 +129,10 @@
                   {include file='catalog/_partials/product-add-to-cart.tpl'}
                 {/block}
 
+                {block name='hook_product_buttons'}
+                  {hook h='displayProductButtons' product=$product}
+                {/block}
+
                 {block name='product_additional_info'}
                   {include file='catalog/_partials/product-additional-info.tpl'}
                 {/block}
@@ -168,7 +172,7 @@
               <section class="product-pack">
                 <h3>{l s='Pack content' d='Shop.Theme.Catalog'}</h3>
                 {foreach from=$packItems item="product_pack"}
-                  {block name='product_miniature'}
+                  {block name='product_pack_miniature'}
                     {include file='catalog/_partials/pack-product.tpl' product=$product_pack}
                   {/block}
                 {/foreach}
