@@ -1,9 +1,13 @@
 <section id="content" class="page-content page-not-found">
-  <p>{l s='Sorry for the inconvenience.' d='Shop.Theme'}</p>
+  {block name='page_content'}
+    <p>{l s='Sorry for the inconvenience.' d='Shop.Theme'}</p>
 
-  {block name='search'}
-    {hook h='displaySearch'}
+    {block name='search'}
+      {hook h='displaySearch'}
+    {/block}
+
+    {block name='hook_not_found'}
+      {hook h='displayNotFound'}
+    {/block}
   {/block}
-
-  {hook h='displayNotFound'}
 </section>

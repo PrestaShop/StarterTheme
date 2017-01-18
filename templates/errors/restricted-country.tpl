@@ -6,8 +6,8 @@
 
     {block name='page_header_container'}
       <header class="page-header">
-        <div class="logo"><img src="{$shop.logo}" alt="logo"></div>
         {block name='page_header'}
+          {block name='page_header_logo'}<div class="logo"><img src="{$shop.logo}" alt="logo"></div>{/block}
           <h1>{block name='page_title'}{$shop.name}{/block}</h1>
         {/block}
       </header>
