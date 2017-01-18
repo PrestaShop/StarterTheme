@@ -9,7 +9,13 @@
 {/block}
 
 {block name='page_content_container'}
-  <div class="address-form">
-    {render template="customer/_partials/address-form.tpl" ui=$address_form}
-  </div>
+  <section id="content" class="page-content page-address">
+
+    {block name='page_content'}
+      <div class="address-form">
+        {render template="customer/_partials/address-form.tpl" ui=$address_form}
+      </div>
+    {/block}
+
+  </section>
 {/block}

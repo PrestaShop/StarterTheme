@@ -59,10 +59,12 @@
     </section>
   {/block}
 
-  {if $order.follow_up}
-    <p>{l s='Click the following link to track the delivery of your order' d='Shop.Theme.Customeraccount'}</p>
-    <a href="{$order.follow_up}">{$order.follow_up}</a>
-  {/if}
+  {block name='order_follow_up'}
+    {if $order.follow_up}
+      <p>{l s='Click the following link to track the delivery of your order' d='Shop.Theme.Customeraccount'}</p>
+      <a href="{$order.follow_up}">{$order.follow_up}</a>
+    {/if}
+  {/block}
 
   {block name='addresses'}
     {if $order.addresses.delivery}
@@ -84,7 +86,9 @@
     </article>
   {/block}
 
-  {$HOOK_DISPLAYORDERDETAIL nofilter}
+  {block name='order_detail'}
+    {$HOOK_DISPLAYORDERDETAIL nofilter}
+  {/block}
 
   {block name='order_detail'}
     {if $order.details.is_returnable}
