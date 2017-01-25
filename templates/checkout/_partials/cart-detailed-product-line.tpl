@@ -59,5 +59,11 @@
     {hook h='displayCartExtraProductActions' product=$product}
   {/block}
 
-  <span class="product-price">{$product.total}</span>
+  <span class="product-price">
+    {if isset($product.is_gift) && $product.is_gift}
+      <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
+    {else}
+      {$product.total}
+    {/if}
+  </span>
 {/block}
