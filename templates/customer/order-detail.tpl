@@ -1,7 +1,7 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='Order details' d='Shop.Theme.CustomerAccount'}
+  {l s='Order details' d='Shop.Theme.Customeraccount'}
 {/block}
 
 {block name='page_content'}
@@ -11,7 +11,7 @@
       <p>
         {l
           s='Order Reference %reference% - placed on %date%'
-          d='Shop.Theme.CustomerAccount'
+          d='Shop.Theme.Customeraccount'
           sprintf=['%reference%' => $order.details.reference, '%date%' => $order.details.order_date]
         }
       </p>
@@ -23,23 +23,23 @@
       <p>{l s='Payment method' d='Shop.Theme.Checkout'} {$order.details.payment}</p>
 
       {if $order.details.invoice_url}
-        <p><a href="{$order.details.invoice_url}">{l s='Download your invoice as a PDF file.' d='Shop.Theme.CustomerAccount'}</a></p>
+        <p><a href="{$order.details.invoice_url}">{l s='Download your invoice as a PDF file.' d='Shop.Theme.Customeraccount'}</a></p>
       {/if}
 
       {if $order.details.recyclable}
-        <p>{l s='You have given permission to receive your order in recycled packaging.' d='Shop.Theme.CustomerAccount'}</p>
+        <p>{l s='You have given permission to receive your order in recycled packaging.' d='Shop.Theme.Customeraccount'}</p>
       {/if}
 
       {if $order.details.gift_message}
-        <p>{l s='You have requested gift wrapping for this order.' d='Shop.Theme.CustomerAccount'}</p>
-        <p>{l s='Message' d='Shop.Theme.CustomerAccount'} {$order.details.gift_message nofilter}</p>
+        <p>{l s='You have requested gift wrapping for this order.' d='Shop.Theme.Customeraccount'}</p>
+        <p>{l s='Message' d='Shop.Theme.Customeraccount'} {$order.details.gift_message nofilter}</p>
       {/if}
     </div>
   {/block}
 
   {block name='order_history'}
     <section id="order-history">
-      <h1>{l s='Follow your order\'s status step-by-step' d='Shop.Theme.CustomerAccount'}</h1>
+      <h1>{l s='Follow your order\'s status step-by-step' d='Shop.Theme.Customeraccount'}</h1>
       <table>
         <thead>
           <tr>
@@ -60,7 +60,7 @@
   {/block}
 
   {if $order.follow_up}
-    <p>{l s='Click the following link to track the delivery of your order' d='Shop.Theme.CustomerAccount'}</p>
+    <p>{l s='Click the following link to track the delivery of your order' d='Shop.Theme.Customeraccount'}</p>
     <a href="{$order.follow_up}">{$order.follow_up}</a>
   {/if}
 
