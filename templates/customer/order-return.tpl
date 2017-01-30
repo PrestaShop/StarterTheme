@@ -1,7 +1,7 @@
 {extends file='customer/page.tpl'}
 
 {block name='page_title'}
-  <h1>{l s='Return details' d='Shop.Theme.CustomerAccount'}</h1>
+  <h1>{l s='Return details' d='Shop.Theme.Customeraccount'}</h1>
 {/block}
 
 {block name='page_content'}
@@ -11,15 +11,15 @@
       <h3>
         {l
           s='%number% on %date%'
-          d='Shop.Theme.CustomerAccount'
+          d='Shop.Theme.Customeraccount'
           sprintf=['%number%' => $return.return_number, '%date%' => $return.return_date]
         }
       </h3>
-      <p>{l s='We have logged your return request.' d='Shop.Theme.CustomerAccount'}</p>
+      <p>{l s='We have logged your return request.' d='Shop.Theme.Customeraccount'}</p>
       <p>
         {l
           s='Your package must be returned to us within %number% days of receiving your order.'
-          d='Shop.Theme.CustomerAccount'
+          d='Shop.Theme.Customeraccount'
           sprintf=['%number%' => $configuration.number_of_days_for_return]
         }
       </p>
@@ -27,7 +27,7 @@
         {* [1][/1] is for a HTML tag. *}
         {l
           s='The current status of your merchandise return is: [1] %status% [/1]'
-          d='Shop.Theme.CustomerAccount'
+          d='Shop.Theme.Customeraccount'
           sprintf=[
             '[1]' => '<strong>',
             '[/1]' => '</strong>',
@@ -35,7 +35,7 @@
           ]
         }
       </p>
-      <p>{l s='List of items to be returned:' d='Shop.Theme.CustomerAccount'}</p>
+      <p>{l s='List of items to be returned:' d='Shop.Theme.Customeraccount'}</p>
     </div>
   {/block}
 
@@ -84,19 +84,19 @@
 
   {if $return.state == 2}
     <section>
-      <h3>{l s='Reminder' d='Shop.Theme.CustomerAccount'}</h3>
+      <h3>{l s='Reminder' d='Shop.Theme.Customeraccount'}</h3>
       <ul>
         <li>
           {l
             s='All merchandise must be returned in its original packaging and in its original state.'
-            d='Shop.Theme.CustomerAccount'
+            d='Shop.Theme.Customeraccount'
           }
         </li>
         <li>
           {* [1][/1] is for a HTML tag. *}
           {l
             s='Please print out the [1]returns form[/1] and include it with your package.'
-            d='Shop.Theme.CustomerAccount'
+            d='Shop.Theme.Customeraccount'
             sprintf=[
               '[1]' => '<a href="'|cat:$return.print_url|cat:'">',
               '[/1]' => '</a>'
@@ -107,7 +107,7 @@
           {* [1][/1] is for a HTML tag. *}
           {l
             s='Please check the [1]returns form[/1] for the correct address.'
-            d='Shop.Theme.CustomerAccount'
+            d='Shop.Theme.Customeraccount'
             sprintf=[
               '[1]' => '<a href="'|cat:$return.print_url|cat:'">',
               '[/1]' => '</a>'
@@ -117,19 +117,19 @@
       </ul>
       {l
         s='When we receive your package, we will notify you by email. We will then begin processing order reimbursement.'
-        d='Shop.Theme.CustomerAccount'
+        d='Shop.Theme.Customeraccount'
       }
       <br><br>
       <a href="{$urls.pages.contact}">
         {l
           s='Please let us know if you have any questions.'
-          d='Shop.Theme.CustomerAccount'
+          d='Shop.Theme.Customeraccount'
         }
       </a>
       <p>
         {l
           s='If the conditions of return listed above are not respected, we reserve the right to refuse your package and/or reimbursement.'
-          d='Shop.Theme.CustomerAccount'
+          d='Shop.Theme.Customeraccount'
         }
       </p>
     </section>
