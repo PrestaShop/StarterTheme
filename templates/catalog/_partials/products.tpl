@@ -11,5 +11,5 @@
     {include file='_partials/pagination.tpl' pagination=$listing.pagination}
   {/block}
 
-  <div><a href="#header">{l s='Back to top' d='Shop.Actions'}</a></div>
+  <div><a href="#header">{l s='Back to top' d='Shop.Theme.Actions'}</a></div>
 </div>
