@@ -214,7 +214,7 @@
             {/if}
           {/block}
           {foreach from=$product.extraContent item=extra key=extraKey}
-            <div class="{$extra.attr}" id="extra-{$extraKey}">
+            <div class="{$extra.attr.class}" id="extra-{$extraKey}">
               {$extra.content nofilter}
             </div>
           {/foreach}
