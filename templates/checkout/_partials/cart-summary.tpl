@@ -1,5 +1,8 @@
 <section id="js-checkout-summary" class="js-cart js-checkout-summary" data-refresh-url="{url entity='cart' params=['ajax' => 1]}">
-  {hook h='displayCheckoutSummaryTop'}
+  {block name='hook_checkout_summary_top'}
+    {hook h='displayCheckoutSummaryTop'}
+  {/block}
+
   {block name='cart_summary_header'}
     <header>
       <h1 class="h3">{l s='Your order' d='Shop.Theme.Customeraccount'}</h1>

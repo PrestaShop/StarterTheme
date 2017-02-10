@@ -1,8 +1,10 @@
 <div class="product-variants">
   {foreach from=$groups key=id_attribute_group item=group}
-    <div>
-      <label for="group_{$id_attribute_group}">{$group.name}</label>
-      {if $group.group_type == 'select'}
+
+    <label for="group_{$id_attribute_group}">{$group.name}</label>
+    {if $group.group_type == 'select'}
+
+      {block name='product_variants_select'}
         <select
           data-product-attribute="{$id_attribute_group}"
           name="group[{$id_attribute_group}]"
@@ -18,7 +20,11 @@
             </option>
           {/foreach}
         </select>
-      {else if $group.group_type == 'color'}
+      {/block}
+
+    {else if $group.group_type == 'color'}
+
+      {block name='product_variants_color'}
         <ul id="group_{$id_attribute_group}">
           {foreach from=$group.attributes key=id_attribute item=group_attribute}
             <li class="input-container">
@@ -39,7 +45,11 @@
             </li>
           {/foreach}
         </ul>
-      {else if $group.group_type == 'radio'}
+      {/block}
+
+    {else if $group.group_type == 'radio'}
+
+      {block name='product_variants_radio'}
         <ul id="group_{$id_attribute_group}">
           {foreach from=$group.attributes key=id_attribute item=group_attribute}
             <li class="input-container">
@@ -54,7 +64,9 @@
             </li>
           {/foreach}
         </ul>
-      {/if}
-    </div>
+      {/block}
+
+    {/if}
+
   {/foreach}
 </div>

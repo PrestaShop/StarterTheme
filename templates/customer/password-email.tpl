@@ -5,29 +5,37 @@
 {/block}
 
 {block name='page_content_container'}
-  <section class="password-form">
-    <form action="{$urls.pages.password}" method="post">
+  <section id="content" class="page-content password-form">
+    {block name='page_content'}
+      <form action="{block name='form_new_password_actionurl'}{$urls.pages.password}{/block}" method="post">
 
-      <header>
-        <p>{l s='Please enter the email address you used to register. You will receive a temporary link to reset your password.'}</p>
-      </header>
+        {block name='form_new_password_header'}
+          <header>
+            <p>{l s='Please enter the email address you used to register. You will receive a temporary link to reset your password.'}</p>
+          </header>
+        {/block}
 
-      <section class="form-fields">
+        {block name='form_new_password_form_fields'}
+          <section class="form-fields">
 
-        <label>
-          <span>{l s='Email address'}</span>
-          <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}">
-        </label>
+            <label>
+              <span>{l s='Email address'}</span>
+              <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}">
+            </label>
 
-      </section>
+          </section>
+        {/block}
 
-      <footer class="form-footer">
-        <button type="submit" name="submit">
-          {l s='Send reset link'}
-        </button>
-      </footer>
+        {block name='form_new_password_footer'}
+          <footer class="form-footer">
+            <button type="submit" name="submit">
+              {l s='Send reset link'}
+            </button>
+          </footer>
+        {/block}
 
-    </form>
+      </form>
+    {/block}
   </section>
 {/block}
 

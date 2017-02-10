@@ -9,9 +9,11 @@
     {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
   {/block}
 
-  {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=[
-  '%from%' => $listing.pagination.items_shown_from ,
-  '%to%' => $listing.pagination.items_shown_to,
-  '%total%' => $listing.pagination.total_items
-  ]}
+  {block name='pagination_summary'}
+    {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=[
+    '%from%' => $listing.pagination.items_shown_from ,
+    '%to%' => $listing.pagination.items_shown_to,
+    '%total%' => $listing.pagination.total_items
+    ]}
+  {/block}
 </div>
