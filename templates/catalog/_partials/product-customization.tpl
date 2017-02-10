@@ -9,6 +9,10 @@
               <label>{$field.label}</label>
               {if $field.type == 'text'}
                 <textarea {if $field.required} required {/if} name="{$field.input_name}">{$field.text}</textarea>
+                <small>{l s='250 char. max' d='Shop.Forms.Help'}</small>
+                {if $field.text !== ''}
+                  <h6>{l s='Your customization:' d='Shop.Theme.Catalog'} <label>{$field.text}</label></h6>
+                {/if}
               {elseif $field.type == 'image'}
                 {if $field.is_customized}
                   <img src="{$field.image.small.url}">
