@@ -1,6 +1,6 @@
 {block name='cart_detailed_product_line'}
   <span class="product-image"><img src="{$product.cover.small.url}"></span>
-  <span class="product-name"><a href="{$product.url}">{$product.name}</a></span>
+  <span class="product-name"><a href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a></span>
   {foreach from=$product.attributes key="attribute" item="value"}
     <span class="product-attributes">
       <span class="label">{$attribute}:</span>
