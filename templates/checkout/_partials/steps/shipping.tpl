@@ -35,7 +35,7 @@
           {if $recyclablePackAllowed}
             <label>
               <input type="checkbox" name="recyclable" value="1" {if $recyclable} checked {/if}>
-              <span>{l s='I would like to receive my order in recycled packaging.'}</span>
+              <span>{l s='I would like to receive my order in recycled packaging.' d='Shop.Theme.Checkout'}</span>
             </label>
           {/if}
           {if $gift.allowed}
@@ -43,17 +43,17 @@
               <input class="js-gift-checkbox" type="checkbox" name="gift" value="1" {if $gift.isGift} checked {/if}>
               <span>{$gift.label}</span>
             </label>
-            <label for="gift_message">{l s='If you\'d like, you can add a note to the gift:'}</label>
+            <label for="gift_message">{l s='If you\'d like, you can add a note to the gift:' d='Shop.Theme.Checkout'}</label>
             <textarea rows="2" cols="120" id="gift_message" name="gift_message">{$gift.message}</textarea>
           {/if}
         </div>
       </div>
       <button type="submit" class="continue" name="confirmDeliveryOption" value="1">
-        {l s='Continue'}
+        {l s='Continue' d='Shop.Theme.Actions'}
       </button>
       </form>
     {else}
-      <p class="warning">{l s='Unfortunately, there are no carriers available for your delivery address.'}</p>
+      <p class="warning">{l s='Unfortunately, there are no carriers available for your delivery address.' d='Shop.Theme.Checkout'}</p>
     {/if}
   </div>
 

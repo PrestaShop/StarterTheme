@@ -9,16 +9,16 @@
     >
 
     {if !$use_same_address}
-      <h2 class="h2">{l s='Shipping Address'}</h2>
+      <h2 class="h2">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
     {/if}
 
     {if $use_same_address && !$cart.is_virtual}
       <p>
-        {l s='The selected address will be used both as your personal address (for invoice) and as your shipping address.'}
+        {l s='The selected address will be used both as your personal address (for invoice) and as your shipping address.' d='Shop.Theme.Checkout'}
       </p>
     {elseif $use_same_address && $cart.is_virtual}
       <p>
-        {l s='The selected address will be used as your personal address (for invoice).'}
+        {l s='The selected address will be used as your personal address (for invoice).' d='Shop.Theme.Checkout'}
       </p>
     {/if}
 
@@ -42,12 +42,12 @@
         }
       </div>
 
-      <a href="{$new_address_delivery_url}">{l s='Add another address'}</a>
+      <a href="{$new_address_delivery_url}">{l s='Add another address' d='Shop.Theme.Actions'}</a>
 
       {if $use_same_address && !$cart.is_virtual}
         <p>
           <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
-            {l s='Billing address differs from shipping address'}
+            {l s='Billing address differs from shipping address' d='Shop.Theme.Checkout'}
           </a>
         </p>
       {/if}
@@ -56,7 +56,7 @@
 
     {if !$use_same_address}
 
-      <h2 class="h2">{l s='Your Invoice Address'}</h2>
+      <h2 class="h2">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
 
       {if $show_invoice_address_form}
         <div id="invoice-address">
@@ -78,7 +78,7 @@
           }
         </div>
 
-        <a href="{$new_address_invoice_url}">{l s='Add another address'}</a>
+        <a href="{$new_address_invoice_url}">{l s='Add another address' d='Shop.Theme.Actions'}</a>
 
       {/if}
 
@@ -86,7 +86,7 @@
 
     {if !$form_has_continue_button}
       <button type="submit" class="continue" name="confirm-addresses" value="1">
-        {l s='Continue'}
+        {l s='Continue' d='Shop.Theme.Actions'}
       </button>
     {/if}
 
