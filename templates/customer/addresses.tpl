@@ -1,7 +1,7 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='Your addresses'}
+  {l s='Your addresses' d='Shop.Theme.Customeraccount'}
 {/block}
 
 {block name='page_content_container'}
@@ -15,7 +15,7 @@
 
   <footer>
     <a href="{$urls.pages.address}" data-link-action="add-address">
-      {l s='Create new address'}
+      {l s='Create new address' d='Shop.Theme.Actions'}
     </a>
   </footer>
 

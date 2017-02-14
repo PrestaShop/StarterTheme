@@ -2,9 +2,9 @@
 
 {block name='page_title'}
   {if $editing}
-    {l s='Update your address'}
+    {l s='Update your address' d='Shop.Theme.Customeraccount'}
   {else}
-    {l s='New address'}
+    {l s='New address' d='Shop.Theme.Customeraccount'}
   {/if}
 {/block}
 

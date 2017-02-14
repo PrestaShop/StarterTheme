@@ -5,12 +5,12 @@
       <thead>
         <tr>
           <th><input type="checkbox"></th>
-          <th>{l s='Reference'}</th>
-          <th>{l s='Product'}</th>
-          <th>{l s='Quantity'}</th>
-          <th>{l s='Returned'}</th>
-          <th>{l s='Unit price'}</th>
-          <th>{l s='Total price'}</th>
+          <th>{l s='Reference' d='Shop.Theme.Catalog'}</th>
+          <th>{l s='Product' d='Shop.Theme.Catalog'}</th>
+          <th>{l s='Quantity' d='Shop.Theme.Catalog'}</th>
+          <th>{l s='Returned' d='Shop.Theme.Catalog'}</th>
+          <th>{l s='Unit price' d='Shop.Theme.Catalog'}</th>
+          <th>{l s='Total price' d='Shop.Theme.Catalog'}</th>
         </tr>
       </thead>
 
@@ -83,8 +83,8 @@
     </table>
 
     <header>
-      <h1 class="h3">{l s='Merchandise return'}</h1>
-      <p>{l s='If you wish to return one or more products, please mark the corresponding boxes and provide an explanation for the return. When complete, click the button below.'}</p>
+      <h1 class="h3">{l s='Merchandise return' d='Shop.Theme.Customeraccount'}</h1>
+      <p>{l s='If you wish to return one or more products, please mark the corresponding boxes and provide an explanation for the return. When complete, click the button below.' d='Shop.Theme.Customeraccount'}</p>
     </header>
 
     <section class="form-fields">
