@@ -19,7 +19,7 @@
           <section class="form-fields">
 
             <label>
-              <span>{l s='Email address' d='Shop.Forms.Labels'}</span>
+              <span>{l s='Email' d='Shop.Forms.Labels'}</span>
               <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|stripslashes}{/if}">
             </label>
 

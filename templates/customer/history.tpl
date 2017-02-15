@@ -37,7 +37,7 @@
             </td>
             <td>
               {if $order.details.invoice_url}
-                <a href="{$order.details.invoice_url}" class="order-invoice-link">{l s='PDF' d='Shop.Theme.Actions'}</a>
+                <a href="{$order.details.invoice_url}" class="order-invoice-link">{l s='PDF' d='Shop.Theme.Customeraccount'}</a>
               {else}
                 -
               {/if}

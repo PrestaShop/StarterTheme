@@ -12,10 +12,10 @@
       <table id="credit-slips">
         <thead>
           <tr>
-            <th>{l s='Credit slip' d='Shop.Theme.Checkout'}</th>
-            <th>{l s='Order' d='Shop.Theme.Checkout'}</th>
-            <th>{l s='Date issued' d='Shop.Theme.Checkout'}</th>
-            <th>{l s='View credit slip' d='Shop.Theme.Checkout'}</th>
+            <th>{l s='Credit slip' d='Shop.Theme.Customeraccount'}</th>
+            <th>{l s='Order' d='Shop.Theme.Customeraccount'}</th>
+            <th>{l s='Date issued' d='Shop.Theme.Customeraccount'}</th>
+            <th>{l s='View credit slip' d='Shop.Theme.Customeraccount'}</th>
           </tr>
         </thead>
         <tbody>
@@ -24,7 +24,7 @@
               <td>{$slip.credit_slip_number}</td>
               <td><a href="{$slip.order_url_details}" data-link-action="view-order-details">{$slip.order_reference}</a></td>
               <td>{$slip.credit_slip_date}</td>
-              <td><a href="{$slip.url}">{l s='PDF' d='Shop.Theme.Actions'}</a></td>
+              <td><a href="{$slip.url}">{l s='PDF' d='Shop.Theme.Customeraccount'}</a></td>
             </tr>
           {/foreach}
         </tbody>

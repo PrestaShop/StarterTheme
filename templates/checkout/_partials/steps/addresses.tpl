@@ -42,7 +42,7 @@
         }
       </div>
 
-      <a href="{$new_address_delivery_url}">{l s='Add another address' d='Shop.Theme.Actions'}</a>
+      <a href="{$new_address_delivery_url}">{l s='Add a new address' d='Shop.Theme.Actions'}</a>
 
       {if $use_same_address && !$cart.is_virtual}
         <p>
@@ -78,7 +78,7 @@
           }
         </div>
 
-        <a href="{$new_address_invoice_url}">{l s='Add another address' d='Shop.Theme.Actions'}</a>
+        <a href="{$new_address_invoice_url}">{l s='Add a new address' d='Shop.Theme.Actions'}</a>
 
       {/if}
 

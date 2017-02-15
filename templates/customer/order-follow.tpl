@@ -11,11 +11,11 @@
     <table>
       <thead>
         <tr>
-          <th>{l s='Return' d='Shop.Theme.Checkout'}</th>
-          <th>{l s='Order' d='Shop.Theme.Checkout'}</th>
-          <th>{l s='Package status' d='Shop.Theme.Checkout'}</th>
-          <th>{l s='Date issued' d='Shop.Theme.Checkout'}</th>
-          <th>{l s='Returns form' d='Shop.Theme.Checkout'}</th>
+          <th>{l s='Return' d='Shop.Theme.Customeraccount'}</th>
+          <th>{l s='Order' d='Shop.Theme.Customeraccount'}</th>
+          <th>{l s='Package status' d='Shop.Theme.Customeraccount'}</th>
+          <th>{l s='Date issued' d='Shop.Theme.Customeraccount'}</th>
+          <th>{l s='Returns form' d='Shop.Theme.Customeraccount'}</th>
         </tr>
       </thead>
       <tbody>
