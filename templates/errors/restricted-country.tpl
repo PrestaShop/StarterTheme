@@ -16,8 +16,8 @@
     {block name='page_content_container'}
       <section id="content" class="page-content page-restricted">
         {block name='page_content'}
-          <h2>{l s='403 Forbidden'}</h2>
-          <p>{l s='You cannot access this store from your country. We apologize for the inconvenience.'}</p>
+          <h2>{l s='403 Forbidden' d='Shop.Theme'}</h2>
+          <p>{l s='You cannot access this store from your country. We apologize for the inconvenience.' d='Shop.Theme'}</p>
         {/block}
       </section>
     {/block}

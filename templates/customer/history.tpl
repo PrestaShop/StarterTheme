@@ -1,22 +1,22 @@
 {extends file='customer/page.tpl'}
 
 {block name='page_title'}
-  {l s='Order history'}
+  {l s='Order history' d='Shop.Theme.Customeraccount'}
 {/block}
 
 {block name='page_content'}
-  <h2>{l s='Here are the orders you\'ve placed since your account was created.'}</h2>
+  <h2>{l s='Here are the orders you\'ve placed since your account was created.' d='Shop.Theme.Customeraccount'}</h2>
 
   {if $orders}
     <table>
       <thead>
         <tr>
-          <th>{l s='Order reference'}</th>
-          <th>{l s='Date'}</th>
-          <th>{l s='Total price'}</th>
-          <th>{l s='Payment'}</th>
-          <th>{l s='Status'}</th>
-          <th>{l s='Invoice'}</th>
+          <th>{l s='Order reference' d='Shop.Theme.Checkout'}</th>
+          <th>{l s='Date' d='Shop.Theme.Checkout'}</th>
+          <th>{l s='Total price' d='Shop.Theme.Checkout'}</th>
+          <th>{l s='Payment' d='Shop.Theme.Checkout'}</th>
+          <th>{l s='Status' d='Shop.Theme.Checkout'}</th>
+          <th>{l s='Invoice' d='Shop.Theme.Checkout'}</th>
           <th>&nbsp;</th>
         </tr>
       </thead>
@@ -37,17 +37,17 @@
             </td>
             <td>
               {if $order.details.invoice_url}
-                <a href="{$order.details.invoice_url}" class="order-invoice-link">{l s='PDF'}</a>
+                <a href="{$order.details.invoice_url}" class="order-invoice-link">{l s='PDF' d='Shop.Theme.Customeraccount'}</a>
               {else}
                 -
               {/if}
             </td>
             <td>
               <a href="{$order.details.details_url}" data-link-action="view-order-details">
-                {l s='Details'}
+                {l s='Details' d='Shop.Theme.Customeraccount'}
               </a>
               {if $order.details.reorder_url}
-                <a href="{$order.details.reorder_url}" class="order-reorder-link">{l s='Reorder'}</a>
+                <a href="{$order.details.reorder_url}" class="order-reorder-link">{l s='Reorder' d='Shop.Theme.Actions'}</a>
               {/if}
             </td>
           </tr>
