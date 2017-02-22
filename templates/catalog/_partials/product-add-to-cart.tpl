@@ -3,7 +3,7 @@
 
     {block name='product_quantity'}
       <p class="product-quantity">
-        <label for="quantity_wanted">{l s='Quantity'}</label>
+        <label for="quantity_wanted">{l s='Quantity' d='Shop.Theme.Catalog'}</label>
         <input
           type="number"
           name="qty"
