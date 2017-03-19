@@ -11,24 +11,22 @@
 {block name='form_fields' append}
   <input type="hidden" name="saveAddress" value="{$type}">
   {if $type === "delivery"}
-    <label>
-      <input  name    = "use_same_address"
-              type    = "checkbox"
-              value   = "1"
-              {if $use_same_address} checked {/if}
-      >
-      <span>{l s='Use this address for invoice too' d='Shop.Theme.Checkout'}</span>
-    </label>
+      {form_field field=[
+      'type' => 'checkbox',
+      'name' => 'usa_same_address',
+      'value' => $use_same_address,
+      'label' => {l s='Use this address for invoice too' d='Shop.Theme.Checkout'}
+      ]}
   {/if}
 {/block}
 
 {block name='form_buttons'}
   {if !$form_has_continue_button}
-    <a href="?cancelAddress={$type}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
+    <a href="{url entity=order params=['cancelAddress' => $type]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
     <button type="submit">{l s='Save Address' d='Shop.Theme.Actions'}</button>
   {else}
     {if $customer.addresses|count > 0}
-      <a href="?cancelAddress={$type}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
+      <a href="{url entity=order params=['cancelAddress' => $type]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
     {/if}
     <button type="submit" class="continue" name="confirm-addresses" value="1">
       {l s='Continue' d='Shop.Theme.Actions'}
