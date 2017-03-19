@@ -13,7 +13,7 @@
   {if $type === "delivery"}
       {form_field field=[
       'type' => 'checkbox',
-      'name' => 'usa_same_address',
+      'name' => 'use_same_address',
       'value' => $use_same_address,
       'label' => {l s='Use this address for invoice too' d='Shop.Theme.Checkout'}
       ]}
