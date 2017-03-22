@@ -24,6 +24,7 @@
     {/block}
 
     <div id="wrapper">
+      {hook h="displayWrapperTop"}
 
       {block name='breadcrumb'}
         {include file='_partials/breadcrumb.tpl'}
@@ -51,12 +52,15 @@
 
       {block name='content_wrapper'}
         <div id="content-wrapper" class="left-column right-column">
+          {hook h="displayContentWrapperTop"}
           {block name='content'}
             <p>Hello world! This is HTML5 Boilerplate.</p>
           {/block}
+          {hook h="displayContentWrapperBottom"}
         </div>
       {/block}
 
+      {hook h="displayWrapperBottom"}
     </div>
 
     <footer id="footer">
