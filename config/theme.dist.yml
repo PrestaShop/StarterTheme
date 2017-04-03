@@ -1,6 +1,6 @@
 name: StarterTheme
 display_name: Starter Theme
-version: 1.0.0
+version: 2.0.0
 author:
   name: "PrestaShop Team"
   email: "pub@prestashop.com"
@@ -8,7 +8,7 @@ author:
 
 meta:
   compatibility:
-      from: 1.7.0.0
+      from: 1.7.1.0
       to: ~
 
   available_layouts:
