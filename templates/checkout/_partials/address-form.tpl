@@ -8,6 +8,15 @@
   {/if}
 {/block}
 
+{block name="address_form_url"}
+  <form
+    method="POST"
+    action="{url entity='order' params=['id_address' => $id_address]}"
+    data-id-address="{$id_address}"
+    data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
+  >
+{/block}
+
 {block name='form_fields' append}
   <input type="hidden" name="saveAddress" value="{$type}">
   {if $type === "delivery"}
@@ -24,11 +33,11 @@
 
 {block name='form_buttons'}
   {if !$form_has_continue_button}
-    <a href="?cancelAddress={$type}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
+    <a href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
     <button type="submit">{l s='Save Address' d='Shop.Theme.Actions'}</button>
   {else}
     {if $customer.addresses|count > 0}
-      <a href="?cancelAddress={$type}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
+      <a href="{url entity='order' params=['cancelAddress' => {$type}]}">{l s='Cancel' d='Shop.Theme.Actions'}</a>
     {/if}
     <button type="submit" class="continue" name="confirm-addresses" value="1">
       {l s='Continue' d='Shop.Theme.Actions'}
