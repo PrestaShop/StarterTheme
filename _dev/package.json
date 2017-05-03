@@ -8,8 +8,8 @@
     "watch": "webpack --progress --colors --watch",
     "debug": "webpack --progress --colors --debug --devtool source-map --output-pathinfo --display-chunks --watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "PrestaShop",
+  "license": "AFL-3.0",
   "devDependencies": {
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
