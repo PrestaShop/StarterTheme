@@ -48,6 +48,7 @@ See [theme.yml description](https://github.com/PrestaShop/StarterTheme/blob/mast
 ### Step 2: Manage assets
 
 The Starter Theme contains the development files in the `_dev` folder.
+If you use Plesk, use the module management to install npm, if not, it will erase all your plesk_file and admin panel when installing `npmp`.
 Install the dependencies using `npm`:
 
 ```bash
