@@ -1,33 +1,33 @@
 {
-  "name": "new-theme",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack --progress -p",
-    "watch": "webpack --progress --colors --watch",
-    "debug": "webpack --progress --colors --debug --devtool source-map --output-pathinfo --display-chunks --watch"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.4.5",
-    "babel-loader": "^6.2.1",
-    "babel-preset-es2015": "^6.3.13",
-    "css-loader": "^0.23.1",
-    "exports-loader": "^0.6.3",
-    "expose-loader": "^0.7.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
-    "imports-loader": "^0.6.5",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
-    "node-sass": "^3.7",
-    "postcss-loader": "^0.8.0",
-    "sass-loader": "^3.1.2",
-    "style-loader": "^0.13.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^2.1.2",
-    "webpack": "^1.13.1"
-  }
+    "name": "new-theme",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack --progress -p",
+        "watch": "webpack --progress --colors --watch",
+        "debug": "webpack --progress --colors --debug --devtool source-map --output-pathinfo --display-chunks --watch"
+    },
+    "author": "PrestaShop",
+    "license": "AFL-3.0",
+    "devDependencies": {
+        "babel-core": "^6.4.5",
+        "babel-loader": "^6.2.1",
+        "babel-preset-es2015": "^6.3.13",
+        "css-loader": "^0.23.1",
+        "exports-loader": "^0.6.3",
+        "expose-loader": "^0.7.1",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "file-loader": "^0.8.5",
+        "imports-loader": "^0.6.5",
+        "less": "^2.7.1",
+        "less-loader": "^2.2.3",
+        "node-sass": "^3.7",
+        "postcss-loader": "^0.8.0",
+        "sass-loader": "^3.1.2",
+        "style-loader": "^0.13.0",
+        "stylus": "^0.54.5",
+        "stylus-loader": "^2.1.2",
+        "webpack": "^1.13.1"
+    }
 }
