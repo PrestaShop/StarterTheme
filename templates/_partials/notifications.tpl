@@ -29,7 +29,7 @@
       <article class="notification notification-success" role="alert" data-alert="success">
         <ul>
           {foreach $notifications.success as $notif}
-            <li>{$notif}</li>
+            <li>{$notif nofilter}</li>
           {/foreach}
         </ul>
       </article>
