@@ -26,12 +26,15 @@
   <div class="js-address-form">
     {include file='_partials/form-errors.tpl' errors=$errors['']}
 
-    <form
-      method="POST"
-      action="{url entity='address' params=['id_address' => $id_address]}"
-      data-id-address="{$id_address}"
-      data-refresh-url="{url entity='address' params=['ajax' => 1, 'action' => 'addressForm']}"
-    >
+    {block name="address_form_url"}
+      <form
+        method="POST"
+        action="{url entity='address' params=['id_address' => $id_address]}"
+        data-id-address="{$id_address}"
+        data-refresh-url="{url entity='address' params=['ajax' => 1, 'action' => 'addressForm']}"
+      >
+    {/block}
+
       {block name="address-form-fields"}
         <section class="form-fields">
           {block name='form_fields'}
