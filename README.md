@@ -41,7 +41,7 @@ meta:
       to: ~
 ```
 
-See [theme.yml description](https://github.com/PrestaShop/StarterTheme/blob/master/doc/theme.yml.md)
+See [theme.yml description](https://github.com/PrestaShop/StarterTheme/blob/develop/doc/theme.yml.md)
 
 **NOTE:** Please note that `/config/theme.yml` is ignored by git (see [.gitignore](https://github.com/PrestaShop/StarterTheme/blob/master/.gitignore))
 
