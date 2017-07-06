@@ -19,8 +19,9 @@ env:
   - PHP_VERSION=7
 
 before_script:
+  - chmod a+w -R $TRAVIS_BUILD_DIR
   - docker run --name mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql:5.6
-  - docker run -e DB_SERVER=mysql -e PS_INSTALL_AUTO=0 -e PS_FOLDER_ADMIN=admin-dev -e PS_FOLDER_INSTALL=install-dev -p 80:80 -tid  --link mysql --name=prestashop -v $TRAVIS_BUILD_DIR:/var/www/html/themes/StarterTheme  prestashop/prestashop-git:$PHP_VERSION
+  - docker run -e DB_SERVER=mysql -e PS_INSTALL_AUTO=0 -e PS_FOLDER_ADMIN=admin-dev -e PS_FOLDER_INSTALL=install-dev -p 80:80 -tid --link mysql --name=prestashop -v $TRAVIS_BUILD_DIR:/var/www/html/themes/StarterTheme prestashop/prestashop-git:$PHP_VERSION
   - docker exec prestashop git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
   - docker exec prestashop git fetch origin
   - docker exec prestashop git checkout .
