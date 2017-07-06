@@ -69,7 +69,7 @@
           <form>
             <input type="hidden" name="order" value="{$sort_order}">
             <select name="q">
-              <option disabled selected hidden>{l s='(no filter)' d='Shop.Theme'}</option>
+              <option disabled selected hidden>{l s='(no filter)' d='Shop.Theme.Global'}</option>
               {foreach from=$facet.filters item="filter"}
                 {if $filter.displayed}
                   <option

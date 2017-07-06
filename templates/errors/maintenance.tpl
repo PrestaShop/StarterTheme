@@ -37,7 +37,7 @@
           {$HOOK_MAINTENANCE nofilter}
         {/block}
         {block name='page_header'}
-          <h1>{block name='page_title'}{l s='We\'ll be back soon.' d='Shop.Theme'}{/block}</h1>
+          <h1>{block name='page_title'}{l s='We\'ll be back soon.' d='Shop.Theme.Global'}{/block}</h1>
         {/block}
       </header>
     {/block}
