@@ -4,6 +4,7 @@ services:
   - docker
 
 addons:
+    chrome: stable
     apt:
         packages:
         - postfix
@@ -41,7 +42,6 @@ before_script:
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_10.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :10 -ac -screen 0 1600x1200x16
   - DISPLAY=:10 node_modules/.bin/selenium-standalone start &> /tmp/selenium.log &
   - sleep 5
-  - export CHROME_BIN=/usr/bin/google-chrome
 
 notifications:
   email: false
