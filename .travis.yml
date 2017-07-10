@@ -4,6 +4,7 @@ services:
   - docker
 
 addons:
+    chrome: stable
     apt:
         packages:
         - postfix
@@ -19,8 +20,9 @@ env:
   - PHP_VERSION=7
 
 before_script:
+  - chmod a+w -R $TRAVIS_BUILD_DIR
   - docker run --name mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql:5.6
-  - docker run -e DB_SERVER=mysql -e PS_INSTALL_AUTO=0 -e PS_FOLDER_ADMIN=admin-dev -e PS_FOLDER_INSTALL=install-dev -p 80:80 -tid  --link mysql --name=prestashop -v $TRAVIS_BUILD_DIR:/var/www/html/themes/StarterTheme  prestashop/prestashop-git:$PHP_VERSION
+  - docker run -e DB_SERVER=mysql -e PS_INSTALL_AUTO=0 -e PS_FOLDER_ADMIN=admin-dev -e PS_FOLDER_INSTALL=install-dev -p 80:80 -tid --link mysql --name=prestashop -v $TRAVIS_BUILD_DIR:/var/www/html/themes/StarterTheme prestashop/prestashop-git:$PHP_VERSION
   - docker exec prestashop git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
   - docker exec prestashop git fetch origin
   - docker exec prestashop git checkout .
@@ -33,14 +35,12 @@ before_script:
   - docker exec prestashop php install-dev/index_cli.php --db_create=1 --db_server=mysql --db_password=admin --name=prestashop.unit.test --password=123456789
   - docker exec prestashop chown -R www-data:www-data /var/www/html/
   - docker cp prestashop:/var/www/html/tests/Selenium selenium
-  - cp travis-scripts/settings.travis.js selenium/settings.js
-  - export PATH=$PATH:/usr/lib/jvm/java-8-oracle/jre/bin
+  - cp selenium/settings.travis.js selenium/settings.js
   - cd selenium && npm install --silent
   - docker exec prestashop php tests/Selenium/prepare-shop.php
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_10.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :10 -ac -screen 0 1600x1200x16
   - DISPLAY=:10 node_modules/.bin/selenium-standalone start &> /tmp/selenium.log &
   - sleep 5
-  - export CHROME_BIN=/usr/bin/google-chrome
 
 notifications:
   email: false
