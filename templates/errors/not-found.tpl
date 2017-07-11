@@ -24,7 +24,7 @@
  *}
 <section id="content" class="page-content page-not-found">
   {block name='page_content'}
-    <p>{l s='Sorry for the inconvenience.' d='Shop.Theme'}</p>
+    <p>{l s='Sorry for the inconvenience.' d='Shop.Theme.Global'}</p>
 
     {block name='search'}
       {hook h='displaySearch'}
