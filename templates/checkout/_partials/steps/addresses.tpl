@@ -66,6 +66,12 @@
         }
       </div>
 
+      {if isset($delivery_address_error)}
+        <p class="notification notification-danger js-address-error" name="alert-delivery" id="id-failure-address-{$delivery_address_error.id_address}">{$delivery_address_error.exception}</p>
+      {else}
+        <p class="notification notification-danger js-address-error hide" name="alert-delivery">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
+      {/if}
+
       <a href="{$new_address_delivery_url}">{l s='Add a new address' d='Shop.Theme.Actions'}</a>
 
       {if $use_same_address && !$cart.is_virtual}
@@ -102,6 +108,12 @@
           }
         </div>
 
+        {if isset($invoice_address_error)}
+          <p class="notification notification-danger js-address-error" name="alert-invoice" id="id-failure-address-{$invoice_address_error.id_address}">{$invoice_address_error.exception}</p>
+        {else}
+          <p class="notification notification-danger js-address-error hide" name="alert-invoice" >{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
+        {/if}
+
         <a href="{$new_address_invoice_url}">{l s='Add a new address' d='Shop.Theme.Actions'}</a>
 
       {/if}
@@ -112,6 +124,7 @@
       <button type="submit" class="continue" name="confirm-addresses" value="1">
         {l s='Continue' d='Shop.Theme.Actions'}
       </button>
+      <input type="hidden" id="not-valid-addresses" value="{$not_valid_addesses}">
     {/if}
 
    </form>
