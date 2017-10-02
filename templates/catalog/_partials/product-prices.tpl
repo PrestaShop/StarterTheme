@@ -82,5 +82,9 @@
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
     {hook h='displayProductPriceBlock' product=$product type="after_price"}
+
+    {if $product.delivery_information}
+      <span class="delivery-information">{$product.delivery_information}</span>
+    {/if}
   </div>
 {/if}

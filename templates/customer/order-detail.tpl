@@ -141,7 +141,7 @@
               <td>{$line.carrier_name}</td>
               <td>{$line.shipping_weight}</td>
               <td>{$line.shipping_cost}</td>
-              <td>{$line.tracking}</td>
+              <td>{$line.tracking nofilter}</td>
             </tr>
           {/foreach}
         </tbody>
