@@ -197,7 +197,7 @@
                 <h3>{l s='Pack content' d='Shop.Theme.Catalog'}</h3>
                 {foreach from=$packItems item="product_pack"}
                   {block name='product_pack_miniature'}
-                    {include file='catalog/_partials/pack-product.tpl' product=$product_pack}
+                    {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack}
                   {/block}
                 {/foreach}
               </section>
