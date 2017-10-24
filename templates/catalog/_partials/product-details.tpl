@@ -47,13 +47,13 @@
   {/block}
 
   {block name='product_features'}
-    {if $product.features}
+    {if $product.grouped_features}
       <section>
         <h3>{l s='Data sheet' d='Shop.Theme.Catalog'}</h3>
         <dl>
-          {foreach from=$product.features item=feature}
+          {foreach from=$product.grouped_features item=feature}
             <dt>{$feature.name}</dt>
-            <dd>{$feature.value}</dd>
+            <dd>{$feature.value|escape:'htmlall'|nl2br nofilter}</dd>
           {/foreach}
         </dl>
       </section>
