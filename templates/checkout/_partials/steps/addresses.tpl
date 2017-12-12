@@ -33,7 +33,7 @@
     >
 
       {if !$use_same_address}
-        <h2 class="h4">{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
+        <h2>{l s='Shipping Address' d='Shop.Theme.Checkout'}</h2>
       {/if}
 
       {if $use_same_address && !$cart.is_virtual}
@@ -67,13 +67,13 @@
         </div>
 
         {if isset($delivery_address_error)}
-          <p class="alert alert-danger js-address-error" name="alert-delivery" id="id-failure-address-{$delivery_address_error.id_address}">{$delivery_address_error.exception}</p>
+          <p class="notification notification-danger js-address-error" name="alert-delivery" id="id-failure-address-{$delivery_address_error.id_address}">{$delivery_address_error.exception}</p>
         {else}
-          <p class="alert alert-danger js-address-error" name="alert-delivery" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
+          <p class="notification notification-danger js-address-error" name="alert-delivery" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
         {/if}
 
-        <p class="add-address">
-          <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+        <p>
+          <a href="{$new_address_delivery_url}">{l s='add new address' d='Shop.Theme.Actions'}</a>
         </p>
 
         {if $use_same_address && !$cart.is_virtual}
@@ -88,7 +88,7 @@
 
       {if !$use_same_address}
 
-        <h2 class="h4">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
+        <h2>{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
 
         {if $show_invoice_address_form}
           <div id="invoice-address">
@@ -111,25 +111,23 @@
           </div>
 
           {if isset($invoice_address_error)}
-            <p class="alert alert-danger js-address-error" name="alert-invoice" id="id-failure-address-{$invoice_address_error.id_address}">{$invoice_address_error.exception}</p>
+            <p class="notifications notification-danger js-address-error" name="alert-invoice" id="id-failure-address-{$invoice_address_error.id_address}">{$invoice_address_error.exception}</p>
           {else}
-            <p class="alert alert-danger js-address-error" name="alert-invoice" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
+            <p class="notifications notification-danger js-address-error" name="alert-invoice" style="display: none">{l s="Your address is incomplete, please update it." d="Shop.Notifications.Error"}</p>
           {/if}
 
-          <p class="add-address">
-            <a href="{$new_address_invoice_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
+          <p>
+            <a href="{$new_address_invoice_url}">{l s='add new address' d='Shop.Theme.Actions'}</a>
           </p>
         {/if}
 
       {/if}
 
       {if !$form_has_continue_button}
-        <div class="clearfix">
-          <button type="submit" class="btn btn-primary continue float-xs-right" name="confirm-addresses" value="1">
-              {l s='Continue' d='Shop.Theme.Actions'}
-          </button>
-          <input type="hidden" id="not-valid-addresses" value="{$not_valid_addesses}">
-        </div>
+        <button type="submit" class="continue" name="confirm-addresses" value="1">
+            {l s='Continue' d='Shop.Theme.Actions'}
+        </button>
+        <input type="hidden" id="not-valid-addresses" value="{$not_valid_addesses}">
       {/if}
 
     </form>
