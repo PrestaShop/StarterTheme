@@ -27,6 +27,7 @@ before_script:
   - docker exec prestashop git fetch origin
   - docker exec prestashop git checkout .
   - docker exec prestashop git checkout $TRAVIS_BRANCH
+  - docker exec prestashop composer install
   - docker exec prestashop rm -Rf themes/classic
   - cp config/theme.dist.yml config/theme.yml
   - docker cp travis-scripts/parameters.yml.travis prestashop:/var/www/html/app/config/parameters.yml
