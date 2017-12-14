@@ -14,9 +14,9 @@ sudo: required
 dist: trusty
 
 env:
-  - PHP_VERSION=5.4
   - PHP_VERSION=5.6
   - PHP_VERSION=7
+  - PHP_VERSION=7.1
 
 before_script:
   - chmod a+w -R $TRAVIS_BUILD_DIR
@@ -26,6 +26,7 @@ before_script:
   - docker exec prestashop git fetch origin
   - docker exec prestashop git checkout .
   - docker exec prestashop git checkout $TRAVIS_BRANCH
+  - docker exec prestashop composer install
   - docker exec prestashop rm -Rf themes/classic
   - cp config/theme.dist.yml config/theme.yml
   - docker cp travis-scripts/parameters.yml.travis prestashop:/var/www/html/app/config/parameters.yml
