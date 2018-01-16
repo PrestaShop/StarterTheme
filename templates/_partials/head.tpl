@@ -41,6 +41,13 @@
   {/if}
 {/block}
 
+{block name='head_hreflang'}
+  {assign "alternative_langs" $urls.alternative_langs|default:[]}
+  {foreach from=$alternative_langs item=pageUrl key=code}
+    <link rel="alternate" href="{$pageUrl}" hreflang="{$code}">
+  {/foreach}
+{/block}
+
 {block name='head_viewport'}
   <meta name="viewport" content="width=device-width, initial-scale=1">
 {/block}
