@@ -30,7 +30,7 @@
       </div>
       <button type="button" disabled>{l s='Checkout' d='Shop.Theme.Actions'}</button>
     {else}
-      <a href="{$urls.pages.order}">{l s='Checkout' d='Shop.Theme.Actions'}</a>
+      <a href="{$urls.pages.cart}?action=show&checkout">{l s='Checkout' d='Shop.Theme.Actions'}</a>
       {hook h='displayExpressCheckout'}
     {/if}
   </div>
