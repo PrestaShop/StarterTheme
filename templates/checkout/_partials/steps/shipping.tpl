@@ -42,7 +42,7 @@
             {foreach from=$delivery_options item=carrier key=carrier_id}
               <div>
                 <div class="delivery-option">
-                  <input type="radio" name="delivery_option[{$id_address}]" id="delivery_option_{$carrier.id}" value="{$carrier_id}"{if $delivery_option == $carrier_id} checked{/if}>
+                  <input type="radio" name="delivery_option[{$id_address}]" id="delivery_option_{$carrier.id}" value="{$carrier_id},"{if $delivery_option == $carrier_id} checked{/if}>
                   <label for="delivery_option_{$carrier.id}">
                     <span>{$carrier.label}</span>
                     {if $carrier.logo}
