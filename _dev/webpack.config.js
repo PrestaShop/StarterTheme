@@ -34,29 +34,7 @@ plugins.push(
 module.exports = [{
   // JavaScript
   entry: [
-    './js/theme.js'
-  ],
-  output: {
-    path: '../assets/js',
-    filename: 'theme.js'
-  },
-  module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loaders: ['babel-loader']
-    }]
-  },
-  externals: {
-    prestashop: 'prestashop'
-  },
-  plugins: plugins,
-  resolve: {
-    extensions: ['', '.js']
-  }
-}, {
-  // CSS
-  entry: [
+    './js/theme.js',
     './css/normalize.css',
     './css/example.less',
     './css/st/dev.styl',
@@ -67,37 +45,44 @@ module.exports = [{
     filename: 'theme.js'
   },
   module: {
-    loaders: [{
+    loaders:  [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loaders: ['babel-loader']
+    }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
-        "style",
-        "css-loader?sourceMap!postcss!sass-loader?sourceMap"
+          "style",
+          "css-loader?sourceMap!postcss!sass-loader?sourceMap"
       )
     }, {
       test: /\.styl$/,
       loader: ExtractTextPlugin.extract(
-        "style",
-        "css-loader?sourceMap!postcss!stylus-loader?sourceMap"
+          "style",
+          "css-loader?sourceMap!postcss!stylus-loader?sourceMap"
       )
     }, {
       test: /\.less$/,
       loader: ExtractTextPlugin.extract(
-        "style",
-        "css-loader?sourceMap!postcss!less-loader?sourceMap"
+          "style",
+          "css-loader?sourceMap!postcss!less-loader?sourceMap"
       )
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract(
-        'style',
-        'css-loader?sourceMap!postcss-loader'
+          'style',
+          'css-loader?sourceMap!postcss-loader'
       )
     }, {
-      test: /.(png|woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+      test: /.(png|woff(2)?|eot|ttf|svg|jpg)(\?[a-z0-9=\.]+)?$/,
       loader: 'file-loader?name=../css/[hash].[ext]'
     }]
   },
+  externals: {
+    prestashop: 'prestashop'
+  },
   plugins: plugins,
   resolve: {
-    extensions: ['', '.scss', '.styl', '.less', '.css']
+    extensions: ['', '.js', '.scss', '.styl', '.less', '.css']
   }
 }];
