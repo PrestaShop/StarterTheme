@@ -12,7 +12,7 @@
     {/block}
 
     {block name='product_name'}
-      <h1 class="h2" itemprop="name"><a href="{$product.url}">{$product.name}</a></h1>
+      <h2 class="h2" itemprop="name"><a href="{$product.url}">{$product.name}</a></h2>
     {/block}
 
     {block name='product_description_short'}
