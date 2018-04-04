@@ -28,9 +28,9 @@
       <img src="{$category.image.medium.url}" alt="{$category.image.legend}">
     </a>
 
-    <h1 class="h2">
+    <h2 class="h2">
       <a href="{$category.url}">{$category.name}</a>
-    </h1>
+    </h2>
 
     <div class="category-description">{$category.description nofilter}</div>
   </section>

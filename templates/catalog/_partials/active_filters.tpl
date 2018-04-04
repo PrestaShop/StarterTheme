@@ -23,7 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <section id="js-active-search-filters" class="active_filters">
-  <h1 class="h3">{l s='Active filters' d='Shop.Theme.Global'}</h1>
+  <h3 class="h3">{l s='Active filters' d='Shop.Theme.Global'}</h3>
   {if $activeFilters|count}
     <ul>
       {foreach from=$activeFilters item="filter"}
