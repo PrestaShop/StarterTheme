@@ -23,14 +23,16 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='sitemap_item'}
-  <li>
-    <a id="{$node.id}" href="{$node.url}" title="{$node.label}">{$node.label}</a>
-    {if isset($node.children) && $node.children|@count > 0}
-      <ul>
-        {foreach $node.children as $child}
-          {include file='cms/_partials/sitemap-tree-branch.tpl' node=$child}
-        {/foreach}
-      </ul>
-    {/if}
-  </li>
+  <ul{if isset($is_nested)} class="nested"{/if}>
+    {foreach $links as $link}
+      <li>
+        <a id="{$link.id}" href="{$link.url}" title="{$link.label}">
+          {$link.label}
+        </a>
+        {if isset($link.children) && $link.children|@count > 0}
+          {include file='cms/_partials/sitemap-nested-list.tpl' links=$link.children is_nested=true}
+        {/if}
+      </li>
+    {/foreach}
+  </ul>
 {/block}
