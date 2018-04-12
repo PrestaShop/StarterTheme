@@ -44,7 +44,7 @@
 
     {block name='product_price_and_shipping'}
       {if $product.show_price}
-        <div class="product-price-and-shipping">
+        <div class="product-price-and-shipping" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           {if $product.has_discount}
             {hook h='displayProductPriceBlock' product=$product type="old_price"}
 
@@ -58,7 +58,8 @@
 
           {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
-          <span itemprop="price" class="price">{$product.price}</span>
+          <span itemprop="priceCurrency" content="{$currency.iso_code}"></span>
+          <span itemprop="price" class="price" content="{$product.price_amount}">{$product.price}</span>
 
           {hook h='displayProductPriceBlock' product=$product type="unit_price"}
 
