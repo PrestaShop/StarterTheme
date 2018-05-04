@@ -35,7 +35,7 @@
 
     {block name='product_price'}
       <p class="product-price {if $product.has_discount}has-discount{/if}" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-        <link itemprop="availability" href="https://schema.org/InStock"/>
+        <link itemprop="availability" href="{$product.seo_availability}"/>
         <span itemprop="price" content="{$product.price_amount}">{$product.price}</span>
         {if $configuration.display_taxes_label}
          <small>{$product.labels.tax_short}</small>
