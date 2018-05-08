@@ -4,6 +4,7 @@ services:
   - docker
 
 addons:
+    chrome: stable
     apt:
         packages:
         - postfix
