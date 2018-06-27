@@ -33,7 +33,7 @@
   {/foreach}
 
   {block name='cart_detailed_product_line_customization'}
-    {if $product.customizations|count}
+    {if is_array($product.customizations) && $product.customizations|count}
       {foreach from=$product.customizations item="customization"}
         {foreach from=$customization.fields item="field"}
           <span class="product-line-info">

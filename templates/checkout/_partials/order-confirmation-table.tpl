@@ -40,7 +40,7 @@
             {foreach from=$product.attributes key="attribute" item="value"}
               - <span class="value">{$value}</span>
             {/foreach}
-            {if $product.customizations|count}
+            {if is_array($product.customizations) && $product.customizations|count}
               <div class="customizations">
                 <ul>
                   {foreach from=$product.customizations item="customization"}
@@ -88,7 +88,7 @@
 
     <table>
       {foreach $subtotals as $subtotal}
-        {if $subtotal.type !== 'tax'}
+        {if $subtotal.type !== 'tax' && $subtotal.label !== null}
           <tr>
             <td>{$subtotal.label}</td>
             <td>{$subtotal.value}</td>
