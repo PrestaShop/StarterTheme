@@ -44,7 +44,7 @@
 
     {block name='product_price_and_shipping'}
       {if $product.show_price}
-        <div class="product-price-and-shipping" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <div class="product-price-and-shipping" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
           {if $product.has_discount}
             {hook h='displayProductPriceBlock' product=$product type="old_price"}
 
