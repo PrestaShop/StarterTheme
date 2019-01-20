@@ -24,8 +24,22 @@
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
-var plugins = [];
+var plugins = [
+
+  new BrowserSyncPlugin({
+    host: "localhost",
+    port: 3000,
+    proxy: "http://localhost:8000/",
+
+    files: [{
+      match: [
+        "../../../themes/**/*.tpl"
+      ]
+    }]
+  }),
+];
 
 plugins.push(
   new ExtractTextPlugin('../css/theme.css')

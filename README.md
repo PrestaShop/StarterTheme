@@ -68,6 +68,47 @@ $ npm run watch
 
 Note: You should probably **start by removing all existing styles**.
 
+### You can use BrowserSync
+
+BrowserSync helps you auto-reload you browser when any type of file gets changed, which ensures a speedy development process.
+
+```bash
+$ cd _dev && npm install browser-sync browser-sync-webpack-plugin --save-dev
+```
+
+Add `browser-sync-webpack-plugin` to `_dev/webpack.config.js`
+
+```
+var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+
+var plugins = [
+
+  new BrowserSyncPlugin({
+
+    host: "localhost",
+    port: 3000,
+    proxy: "http://localhost:8000/",
+
+    files: [{
+        match: [
+          "../../../themes/**/*.tpl"
+        ]
+    }]
+  })
+];
+
+```
+
+Note: proxy can be [virtual host, sub-directory, localhost with port].
+
+```bash
+$ npm run watch
+```
+
+Browse to http://localhost:3000/ during development.
+
 ## Theme architecture
 
 Themes architecture has changed a lot since PrestaShop 1.7.
