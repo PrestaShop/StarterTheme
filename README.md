@@ -1,3 +1,9 @@
+## DEPRECATED
+
+This project is not maintained anymore by the core team. Theme improvements must be brought instead to the classic theme in the [PrestaShop repository](https://github.com/PrestaShop/PrestaShop).
+
+
+
 # PrestaShop Starter Theme
 
 [![Build Status](https://travis-ci.org/PrestaShop/StarterTheme.svg?branch=master)](https://travis-ci.org/PrestaShop/StarterTheme)
