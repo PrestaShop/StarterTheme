@@ -5,7 +5,7 @@ Several files will be checked by the **Theme Manager** to validate the theme's i
  
 ## Mandatory Structure Requirements
 
-A theme must consist of the following file structure before it can be isntalled:
+A theme must consist of the following file structure before it can be installed:
 
 | Localization        | Description           |
 |:--------------------|-----------------------| 
